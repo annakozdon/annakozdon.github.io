@@ -2,7 +2,23 @@
 *,*::before,*::after{
     box-sizing:border-box;
     margin:0;
-    padding:0
+    padding:0;
+    height:100%;
+}
+
+main {
+    height:100vh;
+    overflow-y:scroll;
+    scroll-snap-type:y mandatory;
+    /* touch-action: auto; */
+}
+
+section {
+    /* touch-action: auto; */
+    height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
 }
 
 html{
