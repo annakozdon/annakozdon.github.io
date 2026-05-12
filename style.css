@@ -6,7 +6,7 @@
     height:100%;
 }
 
-main {
+/* main {
     /* height:100vh; */
     /* overflow-y:scroll; */
     /* scroll-snap-type:y mandatory; */
@@ -19,7 +19,7 @@ section {
     /* scroll-snap-align: start; */
     /* display: flex; */
     /* justify-content: center; */
-}
+} */
 
 html{
     -webkit-tap-highlight-color:transparent
