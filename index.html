@@ -1,0 +1,1165 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>NeuroBooster – Rekrutacje</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div class="app" role="application">
+
+<!-- ══════════════════ SCREEN 1 – HOME ══════════════════ -->
+<main class="screen active" id="screen-home" aria-label="Strona główna">
+  <header class="top-bar">
+    <a class="logo" href="#" aria-label="NeuroBooster">
+      <img src="Figma/Mobile/Aplikacja/Logo.png" alt="NeuroBooster" class="logo-img">
+    </a>
+    <button class="btn-avatar" id="home-avatar-btn" aria-label="Mój profil" onclick="avatarClick()">
+      <span id="home-avatar-content"><span class="material-symbols-outlined" style="font-size: 20px; color: #666;">person</span></span>
+    </button>
+  </header>
+
+  <section class="hero">
+    <h1 class="hero-title">Świadome, skuteczne, transparentne procesy rekrutacyjne.</h1>
+    <p class="search-label">Jakiej roli dziś szukasz?</p>
+    <div class="search-row">
+      <input class="input-field" id="home-search" type="search" placeholder="Np. Analityk biznesowy" aria-label="Wpisz nazwę roli"/>
+      <button class="btn-filter" aria-label="Otwórz filtry" onclick="showScreen('screen-filters')">
+        <span class="material-symbols-outlined" style="font-size: 22px; color: var(--ink);">tune</span>
+      </button>
+    </div>
+    <button class="btn-filled" onclick="goToResults()">
+      <span class="material-symbols-outlined" style="font-size: 20px; color: #fff;">search</span>
+      Szukaj ofert
+    </button>
+  </section>
+
+  <section aria-labelledby="latest-h">
+    <h2 class="section-heading" id="latest-h">Najnowsze oferty</h2>
+    <ul class="jobs-list" id="home-list" role="list"></ul>
+    <button class="see-all-btn" onclick="goToResults()">
+      Zobacz wszystkie oferty
+      <span class="material-symbols-outlined" style="font-size: 15px; color: var(--ink);">chevron_right</span>
+    </button>
+  </section>
+
+  <footer class="footer"><a href="#">O nas</a><a href="#">Baza wiedzy</a><a href="#">Polityka prywatności</a><a href="#">Kontakt</a></footer>
+</main>
+
+<!-- ══════════════════ SCREEN 2 – FILTERS ══════════════════ -->
+<main class="screen" id="screen-filters" aria-label="Filtry wyszukiwania">
+  <header class="top-bar" style="justify-content:flex-start;">
+    <button class="btn-back" onclick="goBack()" aria-label="Wróć">
+      <span class="material-symbols-outlined" style="font-size: 24px; color: var(--ink);">arrow_back</span>
+    </button>
+    <span class="top-bar-title">Filtry</span>
+  </header>
+
+  <div class="filters-body">
+    <!-- Location -->
+    <div class="loc-section">
+      <div class="loc-label">Lokalizacja</div>
+      <div class="loc-row">
+        <div class="loc-input-wrap">
+          <input class="loc-input" id="filter-loc" type="text" value="Warszawa" aria-label="Miasto"/>
+          <button class="loc-clear" onclick="document.getElementById('filter-loc').value=''" aria-label="Wyczyść lokalizację"><span class="material-symbols-outlined" style="font-size: 18px; color: var(--ink-3);">close</span></button>
+        </div>
+        <div class="loc-km-wrap">
+          <select class="loc-km" aria-label="Promień wyszukiwania">
+            <option>5 km</option><option selected>10 km</option><option>25 km</option><option>50 km</option>
+          </select>
+          <span class="loc-km-chevron material-symbols-outlined" style="font-size: 14px; color: var(--ink);">expand_more</span>
+        </div>
+      </div>
+    </div>
+    <button class="clear-all-btn" onclick="clearAllFilters()">Wyczyść wszystkie filtry</button>
+
+    <!-- Poziom stanowiska -->
+    <div class="filter-section-title">Poziom stanowiska</div>
+    <div class="filter-opts" id="f-level">
+      <label class="filter-opt"><input type="checkbox" checked/><span class="filter-opt-label">Praktykant/Stażysta</span><span class="filter-opt-count">(100)</span></label>
+      <label class="filter-opt"><input type="checkbox"/><span class="filter-opt-label">Asystent</span><span class="filter-opt-count">(100)</span></label>
+      <label class="filter-opt"><input type="checkbox"/><span class="filter-opt-label">Młodszy specjalista (Junior)</span><span class="filter-opt-count">(100)</span></label>
+      <label class="filter-opt"><input type="checkbox"/><span class="filter-opt-label">Specjalista (Mid/Regular)</span><span class="filter-opt-count">(100)</span></label>
+      <label class="filter-opt"><input type="checkbox"/><span class="filter-opt-label">Starszy specjalista (Senior)</span><span class="filter-opt-count">(100)</span></label>
+      <label class="filter-opt"><input type="checkbox"/><span class="filter-opt-label">Ekspert</span><span class="filter-opt-count">(100)</span></label>
+      <label class="filter-opt"><input type="checkbox"/><span class="filter-opt-label">Kierownik/Koordynator</span><span class="filter-opt-count">(100)</span></label>
+      <label class="filter-opt"><input type="checkbox"/><span class="filter-opt-label">Menedżer</span><span class="filter-opt-count">(100)</span></label>
+    </div>
+
+    <!-- Wymiar zatrudnienia -->
+    <div class="filter-section-title">Wymiar zatrudnienia</div>
+    <div class="filter-opts">
+      <label class="filter-opt"><input type="checkbox" checked/><span class="filter-opt-label">Cały etat</span><span class="filter-opt-count">(100)</span></label>
+      <label class="filter-opt"><input type="checkbox"/><span class="filter-opt-label">Pół etatu</span><span class="filter-opt-count">(100)</span></label>
+      <label class="filter-opt"><input type="checkbox"/><span class="filter-opt-label">Praca dorywcza/tymczasowa</span><span class="filter-opt-count">(100)</span></label>
+      <label class="filter-opt"><input type="checkbox"/><span class="filter-opt-label">Inny</span><span class="filter-opt-count">(100)</span></label>
+    </div>
+
+    <!-- Forma zatrudnienia -->
+    <div class="filter-section-title">Forma zatrudnienia</div>
+    <div class="filter-opts">
+      <label class="filter-opt"><input type="checkbox" checked/><span class="filter-opt-label">Umowa o pracę</span><span class="filter-opt-count">(100)</span></label>
+      <label class="filter-opt"><input type="checkbox"/><span class="filter-opt-label">Umowa zlecenie</span><span class="filter-opt-count">(100)</span></label>
+      <label class="filter-opt"><input type="checkbox"/><span class="filter-opt-label">Umowa o dzieło</span><span class="filter-opt-count">(100)</span></label>
+      <label class="filter-opt"><input type="checkbox" checked/><span class="filter-opt-label">B2B</span><span class="filter-opt-count">(100)</span></label>
+      <label class="filter-opt"><input type="checkbox"/><span class="filter-opt-label">Umowa agencyjna</span><span class="filter-opt-count">(100)</span></label>
+      <label class="filter-opt"><input type="checkbox"/><span class="filter-opt-label">Umowa o staż/praktyki</span><span class="filter-opt-count">(100)</span></label>
+    </div>
+
+    <!-- Tryb pracy -->
+    <div class="filter-section-title">Tryb pracy / miejsce świadczenia pracy</div>
+    <div class="filter-opts">
+      <label class="filter-opt"><input type="checkbox" checked/><span class="filter-opt-label">Stacjonarna</span><span class="filter-opt-count">(100)</span></label>
+      <label class="filter-opt"><input type="checkbox" checked/><span class="filter-opt-label">Zdalna</span><span class="filter-opt-count">(100)</span></label>
+      <label class="filter-opt"><input type="checkbox" checked/><span class="filter-opt-label">Hybrydowa</span><span class="filter-opt-count">(100)</span></label>
+      <label class="filter-opt"><input type="checkbox"/><span class="filter-opt-label">Mobilna</span><span class="filter-opt-count">(100)</span></label>
+    </div>
+
+    <!-- Rozliczanie -->
+    <div class="filter-section-title">Rozliczanie</div>
+    <div class="filter-opts">
+      <label class="filter-opt"><input type="checkbox" checked/><span class="filter-opt-label">Godzinowe</span></label>
+      <label class="filter-opt"><input type="checkbox"/><span class="filter-opt-label">Zadaniowe</span></label>
+    </div>
+
+    <!-- System wynagrodzeń -->
+    <div class="filter-section-title">System wynagrodzeń</div>
+    <div class="filter-opts">
+      <label class="filter-opt"><input type="checkbox" checked/><span class="filter-opt-label">Stała podstawa</span><span class="filter-opt-count">(100)</span></label>
+      <label class="filter-opt"><input type="checkbox"/><span class="filter-opt-label">Prowizja</span><span class="filter-opt-count">(100)</span></label>
+      <label class="filter-opt"><input type="checkbox"/><span class="filter-opt-label">Stała podstawa + prowizja</span><span class="filter-opt-count">(100)</span></label>
+    </div>
+
+    <!-- Dodatkowe (toggles) -->
+    <div class="filter-section-title">Dodatkowe</div>
+    <div class="filter-opts" style="margin-bottom:20px">
+      <div class="tog-row"><label class="tog-wrap"><input class="tog-input" type="checkbox"/><span class="tog-track"></span></label><span class="tog-label-text">Pokaż tylko oferty z wynagrodzeniem</span></div>
+      <div class="tog-row"><label class="tog-wrap"><input class="tog-input" type="checkbox" checked/><span class="tog-track"></span></label><span class="tog-label-text">Elastyczne godziny pracy</span></div>
+      <div class="tog-row"><label class="tog-wrap"><input class="tog-input" type="checkbox" checked/><span class="tog-track"></span></label><span class="tog-label-text">Praca zmianowa</span></div>
+      <div class="tog-row"><label class="tog-wrap"><input class="tog-input" type="checkbox" checked/><span class="tog-track"></span></label><span class="tog-label-text">Praca w weekendy</span></div>
+    </div>
+  </div>
+
+  <div class="filters-footer">
+    <button class="btn-filled" onclick="goToResults()">
+      <span class="material-symbols-outlined" style="font-size: 20px; color: #fff;">search</span>
+      Szukaj <span class="badge-pill" style="background:#fff;color:var(--ink)">27</span>
+    </button>
+  </div>
+</main>
+
+<!-- ══════════════════ SCREEN 3 – RESULTS ══════════════════ -->
+<main class="screen" id="screen-results" aria-label="Wyniki wyszukiwania">
+  <header class="top-bar">
+    <a class="logo" href="#" aria-label="NeuroBooster" onclick="showScreen('screen-home');return false">
+      <img src="Figma/Mobile/Aplikacja/Logo.png" alt="NeuroBooster" class="logo-img">
+    </a>
+    <button class="btn-avatar" id="results-avatar-btn" aria-label="Mój profil" onclick="avatarClick()">
+      <span id="results-avatar-content"><span class="material-symbols-outlined" style="font-size: 20px; color: #666;">person</span></span>
+    </button>
+  </header>
+
+  <div class="results-search">
+    <div class="search-row">
+      <div class="input-wrap">
+        <input class="input-field" id="results-query" type="search" value="Analityk biznesowy" aria-label="Szukana rola"/>
+        <button class="input-clear" onclick="document.getElementById('results-query').value=''" aria-label="Wyczyść">×</button>
+      </div>
+      <button class="btn-filter" aria-label="Filtry" onclick="showScreen('screen-filters')">
+        <span class="material-symbols-outlined" style="font-size: 22px; color: var(--ink);">tune</span>
+      </button>
+    </div>
+    <button class="btn-filled" onclick="goToResults()" style="margin-top:10px">
+      <span class="material-symbols-outlined" style="font-size: 20px; color: #fff;">search</span>
+      Szukaj ofert <span class="badge-pill">27</span>
+    </button>
+  </div>
+
+  <div class="active-filters-row" onclick="toggleActiveFilters()" role="button" aria-expanded="false" id="af-row">
+    <span class="active-filters-label">Aktywne filtry (3)</span>
+    <span id="af-chevron" class="material-symbols-outlined" style="font-size: 16px; color: var(--ink); transition:transform .2s">expand_more</span>
+  </div>
+  <div class="active-filters-expand" id="af-expand">
+    <span class="filter-chip">Analityk biznesowy <button aria-label="Usuń filtr">×</button></span>
+    <span class="filter-chip">Warszawa <button aria-label="Usuń filtr">×</button></span>
+    <span class="filter-chip">Praktykant/Stażysta <button aria-label="Usuń filtr">×</button></span>
+  </div>
+
+  <p class="results-count" id="results-label">Znalezione oferty pracy (27)</p>
+
+  <!-- Skeleton list -->
+  <ul class="jobs-list" id="skeleton-list" role="list" aria-label="Ładowanie wyników" aria-busy="true"></ul>
+
+  <!-- Real results list -->
+  <ul class="jobs-list" id="results-list" role="list" style="display:none;opacity:0;transition:opacity .4s"></ul>
+
+  <nav class="pagination" aria-label="Paginacja" id="results-pagination" style="display:none">
+    <button class="pg-btn" disabled aria-label="Poprzednia strona">&#8249;</button>
+    <button class="pg-btn active" aria-current="page">1</button>
+    <button class="pg-btn">2</button>
+    <button class="pg-btn">3</button>
+    <button class="pg-btn" aria-label="Następna strona">&#8250;</button>
+  </nav>
+
+  <footer class="footer" style="display:none" id="results-footer"><a href="#">O nas</a><a href="#">Baza wiedzy</a><a href="#">Polityka prywatności</a><a href="#">Kontakt</a></footer>
+</main>
+
+<!-- ══════════════════ SCREEN 4 – DETAIL (template) ══════════════════ -->
+<main class="screen" id="screen-detail" aria-label="Szczegóły oferty">
+  <header class="top-bar">
+    <button class="btn-back" onclick="goBack()" id="detail-back-btn" aria-label="Wróć">
+      <span class="material-symbols-outlined" style="font-size: 24px; color: var(--ink);">arrow_back</span>
+    </button>
+    <time class="detail-date" id="dt-date"></time>
+  </header>
+
+  <div class="detail-header">
+    <div class="dh-top">
+      <div id="dt-logo"></div>
+      <h1 class="detail-company" id="dt-company"></h1>
+    </div>
+    <h2 class="detail-role" id="dt-role"></h2>
+    <h3 class="detail-level" id="dt-level"></h3>
+    <div class="detail-meta-row">
+      <span class="detail-meta-item"><span class="material-symbols-outlined" style="font-size: 14px; color: var(--ink-2);">location_on</span><span id="dt-location"></span></span>
+      <span class="detail-meta-item"><span class="material-symbols-outlined" style="font-size: 14px; color: var(--ink-2);">work</span><span id="dt-mode"></span></span>
+      <span class="detail-meta-item"><span class="material-symbols-outlined" style="font-size: 14px; color: var(--ink-2);">schedule</span><span id="dt-schedule"></span></span>
+    </div>
+  </div>
+
+  <div class="salary-card"><div class="salary-amount" id="dt-salary"></div><div class="salary-gross" id="dt-contracts"></div><div class="salary-chips" id="dt-paychips"></div><div class="salary-sub" id="dt-paynote"></div></div>
+
+  <div class="action-row">
+    <button class="btn-outlined" id="fav-btn" aria-pressed="false" onclick="toggleFav()">
+      <span id="fav-icon" class="material-symbols-outlined" style="font-size: 16px; color: var(--ink);">favorite_border</span>
+      Dodaj do ulubionych
+    </button>
+    <button class="match-pill" id="match-btn" onclick="toggleMatch()" aria-expanded="false" aria-controls="match-exp">
+      <span class="material-symbols-outlined" style="font-size: 15px; color: var(--green);">check</span>
+      <span class="match-pill-text" id="dt-match-text"></span>
+      <span id="match-chevron" class="material-symbols-outlined" style="font-size: 14px; color: var(--green); transition:transform .2s">expand_more</span>
+    </button>
+  </div>
+
+  <div class="match-expanded" id="match-exp">
+    <div class="match-exp-title" id="dt-match-title"></div>
+    <p class="match-exp-text">Twój profil jest bardzo dobrze dopasowany do tej oferty.<br><br><strong>5 różni</strong> – sprawdź przez aplikację, które cechy warto rozwinąć.</p>
+  </div>
+
+  <div class="about-card"><h2 class="about-card-title">O firmie</h2><p class="about-card-text" id="dt-about"></p></div>
+
+  <section class="content-section" aria-labelledby="dt-tasks-h">
+    <div class="cs-header"><span class="cs-icon material-symbols-outlined" style="background:#fff3e0; color: #e65100;">description</span><h2 class="cs-title" id="dt-tasks-h">Zadania i obowiązki</h2></div>
+    <p class="cs-intro" id="dt-tasks-intro"></p>
+    <div id="dt-tasks"></div>
+  </section>
+
+  <section class="content-section" aria-labelledby="dt-day-h">
+    <div class="cs-header"><span class="cs-icon material-symbols-outlined" style="background:#e8f4fd; color: #03a9f4;">wb_sunny</span><h2 class="cs-title" id="dt-day-h">Tak będzie wyglądał Twój dzień</h2></div>
+    <p class="cs-intro" id="dt-day-intro"></p>
+    <div id="dt-day"></div>
+  </section>
+
+  <section class="content-section" aria-labelledby="dt-req-h">
+    <div class="cs-header"><span class="cs-icon material-symbols-outlined" style="background:#fce4ec; color: #e91e63;">star</span><h2 class="cs-title" id="dt-req-h">Wymagania i oczekiwania</h2></div>
+    <h3 class="cs-sub">Wymagane</h3><div id="dt-required"></div>
+    <h3 class="cs-sub">Miłe widziane</h3><p class="cs-text" id="dt-nice"></p>
+  </section>
+
+  <section class="content-section" aria-labelledby="dt-style-h">
+    <div class="cs-header"><span class="cs-icon material-symbols-outlined" style="background:#e9e2f5; color: #7c5cbf;">psychology</span><h2 class="cs-title" id="dt-style-h">Styl myślenia i działania optymalny dla tego stanowiska</h2></div>
+    <div class="chips-row" id="dt-chips"></div>
+  </section>
+
+  <section class="content-section" aria-labelledby="dt-ben-h">
+    <div class="cs-header"><span class="cs-icon material-symbols-outlined" style="background:#e8f5e9; color: #2a7d4f;">card_giftcard</span><h2 class="cs-title" id="dt-ben-h">Benefits</h2></div>
+    <div class="benefit-grid" id="dt-benefits"></div>
+  </section>
+
+  <section class="content-section" aria-labelledby="dt-extra-h">
+    <div class="cs-header"><span class="cs-icon material-symbols-outlined" style="background:#e8f4fd; color: #03a9f4;">add</span><h2 class="cs-title" id="dt-extra-h">Dodatkowe benefity</h2></div>
+    <div id="dt-extra"></div>
+  </section>
+
+  <button class="employer-link" onclick="showEmployerPage()">Przejdź na stronę pracodawcy
+    <span class="material-symbols-outlined" style="font-size: 18px; color: var(--ink);">open_in_new</span>
+  </button>
+  <footer class="footer"><a href="#">O nas</a><a href="#">Baza wiedzy</a><a href="#">Polityka prywatności</a><a href="#">Kontakt</a></footer>
+  <div class="apply-sticky">
+    <button class="btn-filled green" onclick="handleApplyClick()">Aplikuj</button>
+  </div>
+</main>
+
+<!-- ══════════════════ SCREEN 4b – EMPLOYER PAGE ══════════════════ -->
+<main class="screen" id="screen-employer" aria-label="Strona pracodawcy">
+  <header class="top-bar">
+    <button class="btn-back" onclick="goBack()" aria-label="Wróć">
+      <span class="material-symbols-outlined" style="font-size: 24px; color: var(--ink);">arrow_back</span>
+    </button>
+    <span class="top-bar-title" id="employer-title"></span>
+    <div style="width:44px"></div>
+  </header>
+
+  <div class="employer-tabs" role="tablist">
+    <button class="employer-tab" role="tab" id="etab-about" aria-selected="true" onclick="switchEmployerTab('about')">Strona pracodawcy</button>
+    <button class="employer-tab" role="tab" id="etab-offers" aria-selected="false" onclick="switchEmployerTab('offers')">Aktualne oferty</button>
+  </div>
+
+  <!-- Tab: Aktualne oferty -->
+  <div id="epanel-offers" class="employer-panel" style="display:none">
+    <ul class="jobs-list" id="employer-jobs-list" style="padding-top:16px;padding-bottom:16px"></ul>
+  </div>
+
+  <!-- Tab: Strona pracodawcy -->
+  <div id="epanel-about" class="employer-panel">
+    <div class="employer-about-header">
+      <div class="employer-about-logo" id="employer-about-logo"></div>
+      <h1 class="employer-about-name" id="employer-about-name"></h1>
+      <p class="employer-about-meta" id="employer-about-meta"></p>
+      <button class="btn-outlined employer-fav-btn">
+        <span class="material-symbols-outlined" style="font-size: 20px; color: var(--ink);">favorite_border</span>
+        Dodaj do ulubionych
+      </button>
+    </div>
+
+    <div class="employer-section">
+      <h2 class="employer-section-title">O firmie</h2>
+      <p class="employer-section-text" id="employer-about-desc"></p>
+    </div>
+
+    <div class="employer-section" id="employer-mission-sec">
+      <div class="employer-card">
+        <div class="cs-header"><span class="cs-icon material-symbols-outlined" style="background:#e9e2f5; font-size: 18px; color: #7c5cbf;">help</span><h3 class="cs-title">Misja</h3></div>
+        <p class="cs-text" id="employer-mission"></p>
+      </div>
+    </div>
+
+    <div class="employer-section" id="employer-values-sec">
+      <h2 class="employer-section-title">Wartości</h2>
+      <div class="chips-row" id="employer-values-chips"></div>
+    </div>
+
+    <div class="employer-section" id="employer-culture-sec">
+      <div class="employer-card">
+        <div class="cs-header"><span class="cs-icon material-symbols-outlined" style="background:#e8f5e9; font-size: 18px; color: var(--green);">people</span><h3 class="cs-title">Kultura organizacji</h3></div>
+        <p class="cs-text" id="employer-culture-desc"></p>
+        <h4 class="cs-sub">Co nas wyróżnia</h4>
+        <p class="cs-text" id="employer-culture-unique"></p>
+        <h4 class="cs-sub" style="margin-top:14px">Przestrzeń i ruch</h4>
+        <div class="chips-row" id="employer-culture-space"></div>
+        <h4 class="cs-sub" style="margin-top:14px">Sensoryka</h4>
+        <div class="chips-row" id="employer-culture-sensory"></div>
+        <h4 class="cs-sub" style="margin-top:14px">Komunikacja i kultura</h4>
+        <div class="chips-row" id="employer-culture-comm"></div>
+      </div>
+    </div>
+
+    <div class="employer-section" id="employer-erg-sec">
+      <div class="employer-card">
+        <div class="cs-header"><span class="cs-icon material-symbols-outlined" style="background:#fff3e0; font-size: 18px; color: #e65100;">person</span><h3 class="cs-title">Grupy pracownicze ERG</h3></div>
+        <ul class="cs-list" id="employer-erg-list"></ul>
+      </div>
+    </div>
+
+    <div class="employer-section">
+      <h2 class="employer-section-title">Tu nas znajdziesz</h2>
+      <div class="employer-links-list" id="employer-links"></div>
+    </div>
+
+    <footer class="footer"><a href="#">O nas</a><a href="#">Baza wiedzy</a><a href="#">Polityka prywatności</a><a href="#">Kontakt</a></footer>
+  </div>
+</main>
+
+<!-- ══════════════════ SCREEN 5 – LOGIN ══════════════════ -->
+<main class="screen" id="screen-login" aria-label="Logowanie">
+  <header class="top-bar" style="justify-content:flex-start">
+    <button class="btn-back" onclick="goBack()">
+      <span class="material-symbols-outlined" style="font-size: 24px; color: var(--ink);">arrow_back</span>
+    </button>
+    <span style="font-size:14px;font-weight:600;color:var(--ink-2)">Wróć</span>
+  </header>
+  <div class="login-body">
+    <div class="login-logo">
+      <img src="Figma/Mobile/Aplikacja/RGB__glowne_1 1.png" alt="NeuroBooster" class="login-logo-img">
+    </div>
+    <h1 class="login-section-title">Szybkie logowanie</h1>
+    <button class="btn-google" onclick="loginWithGoogle()">
+      <svg width="20" height="20" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+      Google
+    </button>
+    <div class="divider"><div class="divider-line"></div><span class="divider-label">lub</span><div class="divider-line"></div></div>
+    <p class="login-desc">Wpisz swój e-mail, a my wyślemy Ci bezpieczny link do zalogowania. Nie potrzebujesz hasła.</p>
+    <label class="email-label" for="login-email">Email</label>
+    <input class="input-email" id="login-email" type="email" placeholder="mojmail@com" autocomplete="email"/>
+    <button class="btn-filled" id="send-btn" onclick="handleSendLink()">Wyślij link</button>
+  </div>
+</main>
+
+<!-- ══════════════════ SCREEN 6 – APPLY ══════════════════ -->
+<main class="screen" id="screen-apply" aria-label="Formularz aplikacji">
+
+  <header class="top-bar">
+    <div style="width:44px"></div>
+    <span class="top-bar-title">Aplikuj</span>
+    <button class="btn-icon-close" onclick="goBack()" aria-label="Zamknij">
+      <span class="material-symbols-outlined" style="font-size: 24px; color: var(--ink);">close</span>
+    </button>
+  </header>
+
+  <div class="apply-job-mini" id="apply-job-mini"></div>
+
+  <div class="apply-form">
+    <div class="form-group">
+      <label class="form-label" for="apply-first">Imię <span class="req">*</span></label>
+      <input class="form-input" id="apply-first" type="text" placeholder="Np. Anna" autocomplete="given-name" oninput="validateApplyForm()"/>
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="apply-last">Nazwisko <span class="req">*</span></label>
+      <input class="form-input" id="apply-last" type="text" placeholder="Np. Kowalska" autocomplete="family-name" oninput="validateApplyForm()"/>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Dokumenty <span class="req">*</span></label>
+      <div class="docs-box" id="apply-docs-box"></div>
+    </div>
+  </div>
+
+  <div class="apply-profile-sec">
+    <h2 class="apply-profile-title">Profil</h2>
+    <p class="apply-profile-desc">Udostępnij rekruterowi dodatkowe informacje o sobie, które pozwolą mu lepiej zrozumieć Twój potencjał i oczekiwania względem miejsca pracy.</p>
+    <div class="ptog-item">
+      <div class="ptog-row">
+        <span class="ptog-label">Dołącz "Bio"</span>
+        <label style="position:relative;display:inline-block;width:44px;height:24px"><input class="tog-input" type="checkbox" disabled/><span class="tog-track"></span></label>
+      </div>
+      <p class="ptog-hint">Aby dodać "Bio" do aplikacji, uzupełnij swój profil w menu użytkownika.</p>
+    </div>
+    <div class="ptog-item">
+      <div class="ptog-row">
+        <span class="ptog-label">Dołącz "Boostery i blokery"</span>
+        <label style="position:relative;display:inline-block;width:44px;height:24px"><input class="tog-input" type="checkbox" disabled/><span class="tog-track"></span></label>
+      </div>
+      <p class="ptog-hint">Aby dodać "Boostery i blokery" do aplikacji, uzupełnij swój profil w menu użytkownika.</p>
+    </div>
+    <div class="ptog-item">
+      <div class="ptog-row">
+        <span class="ptog-label">Dołącz "Wizytówkę"</span>
+        <label style="position:relative;display:inline-block;width:44px;height:24px"><input class="tog-input" type="checkbox" disabled/><span class="tog-track"></span></label>
+      </div>
+      <p class="ptog-hint">Aby dodać "Wizytówkę" do aplikacji, uzupełnij swój profil w menu użytkownika.</p>
+    </div>
+  </div>
+
+  <div class="apply-links">
+    <a class="apply-link" href="#" onclick="return false">O nas</a>
+    <a class="apply-link" href="#" onclick="return false">Baza wiedzy</a>
+    <a class="apply-link" href="#" onclick="return false">Polityka prywatności</a>
+    <a class="apply-link" href="#" onclick="return false">Kontakt</a>
+  </div>
+
+  <div class="apply-sticky">
+    <button class="btn-filled" id="apply-submit-btn" disabled onclick="handleApplySubmit()">Wyślij aplikację</button>
+  </div>
+</main>
+
+<!-- ══════════════════ SCREEN 7 – SUCCESS ══════════════════ -->
+<main class="screen" id="screen-success" aria-label="Aplikacja wysłana">
+  <header class="top-bar">
+    <button class="btn-back" onclick="showScreen('screen-home')" aria-label="Wróć do strony głównej">
+      <span class="material-symbols-outlined" style="font-size: 24px; color: var(--ink);">home</span>
+    </button>
+    <img src="Figma/Mobile/Aplikacja/Logo.png" alt="NeuroBooster" class="logo-img" aria-hidden="true">
+    <div style="width:44px"></div>
+  </header>
+
+  <div class="success-body">
+    <div class="success-icon-wrap">
+      <span class="material-symbols-outlined" style="font-size: 36px; color: var(--green);">check</span>
+    </div>
+    <h1 class="success-title">Aplikacja wysłana</h1>
+    <p class="success-desc">Twoje zgłoszenie zostało przekazane do pracodawcy. Status procesu oraz historię wszystkich swoich aktywności możesz na bieżąco monitorować w sekcji "Moje aplikacje", dostępnej w menu użytkownika.</p>
+    <button class="btn-filled" onclick="goToMyApplications()" style="margin-top:8px">
+      Przejdź do moich aplikacji
+      <span class="material-symbols-outlined" style="font-size: 16px; color: #fff;">chevron_right</span>
+    </button>
+  </div>
+
+  <footer class="footer"><a href="#">O nas</a><a href="#">Baza wiedzy</a><a href="#">Polityka prywatności</a><a href="#">Kontakt</a></footer>
+</main>
+
+<!-- ══════════════════ OVERLAY – MENU ══════════════════ -->
+<div class="menu-overlay" id="menu-overlay" aria-label="Menu użytkownika" role="dialog" aria-modal="true">
+  <div class="menu-backdrop" onclick="closeMenu()" aria-hidden="true"></div>
+  <div class="menu-panel">
+  <header class="top-bar">
+    <button class="btn-back" id="menu-back-btn" onclick="closeMenu()" aria-label="Zamknij menu">
+      <span class="material-symbols-outlined" style="font-size: 24px; color: var(--ink);">arrow_back</span>
+    </button>
+    <span class="top-bar-title">Menu</span>
+    <button class="btn-icon-close" onclick="closeMenu()" aria-label="Zamknij">
+      <span class="material-symbols-outlined" style="font-size: 24px; color: var(--ink);">close</span>
+    </button>
+  </header>
+
+  <div class="menu-user-row">
+    <button class="menu-avatar" id="menu-avatar-btn" onclick="openAvatarModal()" aria-label="Edytuj zdjęcie profilowe">
+      <span id="menu-avatar-content"></span>
+    </button>
+    <span class="menu-user-name" id="menu-user-name">Anna Kowalska</span>
+    <span class="menu-email" id="menu-user-email">annakowalska@email.com</span>
+  </div>
+
+  <nav class="menu-nav" aria-label="Nawigacja użytkownika">
+    <button class="menu-nav-item" onclick="openFromMenu('screen-profile')">
+      <span class="material-symbols-outlined" style="font-size: 22px; color: var(--ink);">person</span>
+      Ustawienia profilu
+      <span class="material-symbols-outlined" style="font-size: 20px; color: var(--ink-3); margin-left:auto">chevron_right</span>
+    </button>
+    <button class="menu-nav-item" onclick="openFromMenu('screen-documents')">
+      <span class="material-symbols-outlined" style="font-size: 22px; color: var(--ink);">description</span>
+      Dokumenty
+      <span class="material-symbols-outlined" style="font-size: 20px; color: var(--ink-3); margin-left:auto">chevron_right</span>
+    </button>
+    <button class="menu-nav-item" onclick="openFromMenu('screen-applications')">
+      <span class="material-symbols-outlined" style="font-size: 22px; color: var(--ink);">check_circle</span>
+      Moje aplikacje
+      <span class="material-symbols-outlined" style="font-size: 20px; color: var(--ink-3); margin-left:auto">chevron_right</span>
+    </button>
+    <button class="menu-nav-item" onclick="openFromMenu('screen-favourites')">
+      <span class="material-symbols-outlined" style="font-size: 22px; color: var(--ink);">favorite_border</span>
+      Ulubione
+      <span class="material-symbols-outlined" style="font-size: 20px; color: var(--ink-3); margin-left:auto">chevron_right</span>
+    </button>
+  </nav>
+
+  <div class="menu-footer-actions">
+    <button class="menu-logout-btn" onclick="handleLogout()">
+      <span class="material-symbols-outlined" style="font-size: 22px; color: var(--ink);">logout</span>
+      Wyloguj
+    </button>
+  </div>
+  </div><!-- /menu-panel -->
+</div><!-- /menu-overlay -->
+
+<!-- ══════════════════ SCREEN 9 – DOCUMENTS ══════════════════ -->
+<main class="screen" id="screen-documents" aria-label="Moje dokumenty">
+  <header class="top-bar">
+    <button class="btn-back" onclick="goBack()" aria-label="Wróć">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="ico"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" fill="#1c1b2e"/></svg>
+    </button>
+    <span class="top-bar-title">Dokumenty</span>
+    <button class="btn-icon-close" onclick="goBack()" aria-label="Zamknij">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="ico"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" fill="#1c1b2e"/></svg>
+    </button>
+  </header>
+
+  <div class="docs-screen-body">
+    <h2 class="docs-screen-title">Moje dokumenty</h2>
+    <p class="docs-screen-desc">Przechowuj CV i certyfikaty w jednym miejscu, aby wysyłać zgłoszenia jednym kliknięciem.</p>
+
+    <ul class="docs-file-list" id="docs-file-list"></ul>
+    <div class="docs-screen-empty" id="docs-screen-empty" style="display:none">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13zM8 16h8v2H8v-2zm0-4h8v2H8v-2z" fill="#c0bcb6"/></svg>
+      <p class="docs-screen-empty-text">Nie masz jeszcze żadnych dokumentów? Dodaj swoje aktualne CV, aby być gotowym na każdą ofertę pracy.</p>
+    </div>
+  </div>
+
+  <div class="docs-sticky">
+    <button class="btn-filled" onclick="addDocumentDemo()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="#fff"/></svg>
+      Dodaj dokument
+    </button>
+  </div>
+
+  <!-- Delete confirmation modal -->
+  <div class="modal-overlay" id="delete-modal-overlay" onclick="closeDeleteModal()">
+    <div class="modal-card" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <span class="modal-title">Usuń dokument</span>
+        <button class="modal-close" onclick="closeDeleteModal()" aria-label="Zamknij">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" class="ico"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" fill="#1c1b2e"/></svg>
+        </button>
+      </div>
+      <p class="modal-body-text">Dokument zostanie trwale usunięty. Czy na pewno chcesz to zrobić?</p>
+      <div class="modal-actions">
+        <button class="btn-outlined modal-cancel-btn" onclick="closeDeleteModal()">Anuluj</button>
+        <button class="btn-filled modal-delete-btn" onclick="confirmDeleteDocument()">Usuń dokument</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- ══════════════════ SCREEN 10 – PROFILE SETTINGS ══════════════════ -->
+<main class="screen" id="screen-profile" aria-label="Ustawienia profilu">
+  <header class="top-bar">
+    <button class="btn-back" onclick="goBack()" aria-label="Wróć">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="ico"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" fill="#1c1b2e"/></svg>
+    </button>
+    <span class="top-bar-title">Ustawienia profilu</span>
+    <button class="btn-icon-close" onclick="goBack()" aria-label="Zamknij">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="ico"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" fill="#1c1b2e"/></svg>
+    </button>
+  </header>
+
+  <!-- Tabs -->
+  <div class="profile-tabs" role="tablist">
+    <button class="profile-tab active" role="tab" aria-selected="true" id="tab-bio" onclick="switchProfileTab('bio')">Bio</button>
+    <button class="profile-tab" role="tab" aria-selected="false" id="tab-boosters" onclick="switchProfileTab('boosters')">Boostery i blokery</button>
+    <button class="profile-tab" role="tab" aria-selected="false" id="tab-card" onclick="switchProfileTab('card')">Wizytówka</button>
+  </div>
+
+  <!-- Tab: Bio -->
+  <div class="profile-tab-panel" id="panel-bio" role="tabpanel">
+    <div class="profile-section">
+      <h3 class="profile-section-title">Zaimki osobowe</h3>
+      <div class="profile-select-wrap">
+        <select class="profile-select" aria-label="Zaimki osobowe">
+          <option>Ona/ jej</option>
+          <option>On/ jego</option>
+          <option>Oni/ ich</option>
+          <option>Wolę nie podawać</option>
+        </select>
+        <svg class="profile-select-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" fill="#1c1b2e"/></svg>
+      </div>
+    </div>
+
+    <div class="profile-section">
+      <h3 class="profile-section-title">Bio</h3>
+      <p class="profile-section-desc">Wybierz pozycje, które pozwalają Ci pracować w zgodzie ze sobą.</p>
+    </div>
+
+    <div class="profile-accordion" id="bio-values">
+      <button class="profile-acc-header" onclick="toggleAcc('bio-values')" aria-expanded="true">
+        <span>Wartości i potrzeby</span>
+        <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" fill="#1c1b2e"/></svg>
+      </button>
+      <div class="profile-acc-body open">
+        <div class="profile-chips-grid" id="chips-values"></div>
+      </div>
+    </div>
+
+    <div class="profile-accordion" id="bio-thinking">
+      <button class="profile-acc-header" onclick="toggleAcc('bio-thinking')" aria-expanded="true">
+        <span>Tak myślę i działam</span>
+        <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" fill="#1c1b2e"/></svg>
+      </button>
+      <div class="profile-acc-body open">
+        <div class="profile-chips-grid" id="chips-thinking"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab: Boostery i blokery -->
+  <div class="profile-tab-panel" id="panel-boosters" role="tabpanel" style="display:none">
+    <div class="profile-section" style="padding-bottom:10px">
+      <p class="profile-section-desc">Kliknij raz, aby zaznaczyć element jako zielony booster, który wspiera Twoją pracę. Kliknij drugi raz, aby zmienić go w czerwony blocker, który utrudnia Ci działanie.</p>
+    </div>
+
+    <div class="profile-accordion" id="boost-space">
+      <button class="profile-acc-header" onclick="toggleAcc('boost-space')" aria-expanded="true">
+        <span>Przestrzeń i ruch</span>
+        <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" fill="#1c1b2e"/></svg>
+      </button>
+      <div class="profile-acc-body open">
+        <div class="boost-chips-grid" id="boost-chips-space"></div>
+      </div>
+    </div>
+
+    <div class="profile-accordion" id="boost-sensory">
+      <button class="profile-acc-header" onclick="toggleAcc('boost-sensory')" aria-expanded="true">
+        <span>Sensoryka</span>
+        <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" fill="#1c1b2e"/></svg>
+      </button>
+      <div class="profile-acc-body open">
+        <div class="boost-chips-grid" id="boost-chips-sensory"></div>
+      </div>
+    </div>
+
+    <div class="profile-accordion" id="boost-culture">
+      <button class="profile-acc-header" onclick="toggleAcc('boost-culture')" aria-expanded="true">
+        <span>Komunikacja i kultura</span>
+        <svg class="acc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" fill="#1c1b2e"/></svg>
+      </button>
+      <div class="profile-acc-body open">
+        <div class="boost-chips-grid" id="boost-chips-culture"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab: Wizytówka -->
+  <div class="profile-tab-panel" id="panel-card" role="tabpanel" style="display:none">
+    <div class="profile-section" style="padding-bottom:10px">
+      <p class="profile-section-desc">Opisz swoje potrzeby w trakcie rekrutacji</p>
+    </div>
+
+    <ul class="wizytowka-list" id="wizytowka-list"></ul>
+
+    <div class="profile-section" style="padding-top:20px;padding-bottom:16px">
+      <h3 class="profile-section-title">Dodatkowe potrzeby</h3>
+      <textarea class="wizytowka-textarea" placeholder="Wpisz tu potrzeby, których brakuje" rows="4"></textarea>
+    </div>
+  </div>
+
+  <div class="profile-sticky">
+    <button class="btn-filled" onclick="saveProfileDemo()"> Zapisz wizytówkę</button>
+  </div>
+</main>
+
+<!-- ══ TOAST ══ -->
+<div id="toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
+
+<!-- ══ AVATAR EDIT MODAL ══ -->
+<div class="modal-overlay" id="avatar-modal" onclick="closeAvatarModal()">
+  <div class="modal-card" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <span class="modal-title">Zdjęcie profilowe</span>
+      <button class="modal-close" onclick="closeAvatarModal()" aria-label="Zamknij">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" class="ico"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" fill="#1c1b2e"/></svg>
+      </button>
+    </div>
+    <div class="avatar-modal-preview">
+      <div class="avatar-modal-circle" id="avatar-modal-circle"></div>
+    </div>
+    <div class="modal-actions" style="flex-direction:column;gap:8px">
+      <button class="btn-filled" onclick="changeAvatarDemo()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" fill="#fff"/></svg>
+        Zmień zdjęcie
+      </button>
+      <button class="btn-outlined" id="avatar-delete-btn" onclick="deleteAvatarDemo()">Usuń zdjęcie</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ SCREEN – ULUBIONE ══════════════════ -->
+<main class="screen" id="screen-favourites" aria-label="Ulubione">
+  <header class="top-bar" style="justify-content:flex-start;">
+    <button class="btn-back" onclick="goBack()" aria-label="Wróć">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="ico"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" fill="#1c1b2e"/></svg>
+    </button>
+    <span class="top-bar-title">Ulubione</span>
+  </header>
+
+  <div class="profile-tabs" role="tablist">
+    <button class="profile-tab active" role="tab" aria-selected="true" id="ftab-companies" onclick="switchFavTab('companies')">Firmy</button>
+    <button class="profile-tab" role="tab" aria-selected="false" id="ftab-offers" onclick="switchFavTab('offers')">Ogłoszenia</button>
+  </div>
+
+  <div id="fpanel-companies" role="tabpanel" style="padding:16px 16px 96px">
+    <p class="docs-screen-empty-text" style="color:var(--text-muted);text-align:center;margin-top:48px">Nie obserwujesz jeszcze żadnych firm.</p>
+  </div>
+  <div id="fpanel-offers" role="tabpanel" style="padding:16px 16px 96px;display:none">
+    <p class="docs-screen-empty-text" style="color:var(--text-muted);text-align:center;margin-top:48px">Nie masz jeszcze ulubionych ogłoszeń.</p>
+  </div>
+</main>
+
+<!-- ══════════════════ SCREEN – MOJE APLIKACJE ══════════════════ -->
+<main class="screen" id="screen-applications" aria-label="Moje aplikacje">
+  <header class="top-bar" style="justify-content:flex-start;">
+    <button class="btn-back" onclick="goBack()" aria-label="Wróć">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="ico"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" fill="#1c1b2e"/></svg>
+    </button>
+    <span class="top-bar-title">Moje aplikacje</span>
+  </header>
+
+  <div class="profile-tabs" role="tablist">
+    <button class="profile-tab active" role="tab" aria-selected="true" id="atab-active" onclick="switchAppTab('active')">Aktywne</button>
+    <button class="profile-tab" role="tab" aria-selected="false" id="atab-archive" onclick="switchAppTab('archive')">Archiwum</button>
+  </div>
+
+  <div id="apanel-active" role="tabpanel" class="applist-panel"></div>
+  <div id="apanel-archive" role="tabpanel" class="applist-panel" style="display:none"></div>
+</main>
+
+<!-- ══════════════════ SCREEN – APLIKACJA DETAIL ══════════════════ -->
+<main class="screen" id="screen-app-detail" aria-label="Status aplikacji">
+  <header class="top-bar">
+    <button class="btn-back" onclick="goBack()" aria-label="Wróć">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="ico"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" fill="#1c1b2e"/></svg>
+    </button>
+    <span class="top-bar-title" id="appd-title"></span>
+    <button class="btn-icon-close" onclick="goBack()" aria-label="Zamknij">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="ico"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" fill="#1c1b2e"/></svg>
+    </button>
+  </header>
+
+  <div class="appd-body">
+    <!-- Company mini card -->
+    <div class="appd-company-card">
+      <div class="appd-logo" id="appd-logo"></div>
+      <div class="appd-company-info">
+        <div class="appd-company-name" id="appd-company"></div>
+        <div class="appd-role" id="appd-role"></div>
+        <div class="appd-applied-date" id="appd-applied"></div>
+      </div>
+    </div>
+
+    <!-- Current status banner -->
+    <div class="appd-status-banner" id="appd-status-banner">
+      <span class="appd-status-dot" id="appd-status-dot"></span>
+      <span class="appd-status-label" id="appd-status-label"></span>
+      <span class="appd-status-time" id="appd-status-time"></span>
+    </div>
+
+    <!-- Next step card (shown when relevant) -->
+    <div class="appd-next-card" id="appd-next-card" style="display:none">
+      <div class="appd-next-label">NAJBLIŻSZY KROK</div>
+      <div class="appd-next-title" id="appd-next-title"></div>
+      <div class="appd-next-meta" id="appd-next-meta"></div>
+      <div class="appd-next-sub" id="appd-next-sub"></div>
+      <div class="appd-next-actions" id="appd-next-actions"></div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="appd-section-card">
+      <div class="appd-section-label">HISTORIA PROCESU</div>
+      <ul class="appd-timeline" id="appd-timeline"></ul>
+    </div>
+
+    <!-- Notes -->
+    <div class="appd-section-card">
+      <div class="appd-section-label">MOJE NOTATKI</div>
+      <textarea class="appd-notes" id="appd-notes" placeholder="Zapisz co chcesz zapamiętać — pytania do rekrutera, wrażenia po rozmowie, rzeczy do sprawdzenia..." rows="4"></textarea>
+      <div class="appd-notes-hint">Notatki widoczne tylko dla Ciebie</div>
+    </div>
+
+    <!-- Sent documents -->
+    <div class="appd-section-card" id="appd-docs-card">
+      <div class="appd-section-label">WYSŁANE DOKUMENTY</div>
+      <div class="appd-docs-list" id="appd-docs-list"></div>
+    </div>
+
+    <!-- Offer details -->
+    <div class="appd-section-card">
+      <div class="appd-section-label">SZCZEGÓŁY OFERTY</div>
+      <div class="appd-details-grid" id="appd-details-grid"></div>
+      <button class="appd-offer-link" id="appd-offer-link">Zobacz pełną ofertę →</button>
+    </div>
+  </div>
+</main>
+
+</div><!-- /app -->
+
+<script type="application/json" id="app-data">
+{
+  "jobs": [
+    {
+      "id": "allegro",
+      "company": "Allegro",
+      "role": "Analityk biznesowy",
+      "date": "23.11.2025, 11:20",
+      "type": "Praktykant / Stażysta",
+      "location": "Warszawa, Wola",
+      "workMode": "Zdalna / Hybrydowa",
+      "schedule": "Pół etatu • Tymczasowa",
+      "salary": "10 500 – 16 200 PLN brutto",
+      "contracts": "Umowa o pracę, B2B",
+      "payChips": ["Godzinne", "Stała podstawa"],
+      "payNote": "Rozliczanie: Godzinne, Stała podstawa",
+      "matchCount": 5,
+      "logoColor": "#ff5500",
+      "tags": "Praktykant/Stażysta • Zdalna / Hybrydowa • UoP, B2B",
+      "about": "Allegro to największa polska platforma handlowa z ponad 20 milionami aktywnych kupujących. Jesteśmy liderem e-commerce w Polsce i jedną z największych platform w Europie Środkowej. Łączymy nowoczesne technologie z pasją do handlu, tworząc miejsce, gdzie każdy może kupić i sprzedać niemal wszystko.",
+      "tasksIntro": "Jako Analityk biznesowy w Allegro będziesz odpowiedzialny/a za:",
+      "tasks": ["Analizę danych sprzedażowych i zachowań użytkowników platformy.","Tworzenie raportów i dashboardów dla zespołów produktowych.","Monitorowanie kluczowych KPI i identyfikację odchyleń od celów.","Współpracę z product managerami przy definiowaniu metryk sukcesu.","Przeprowadzanie analiz wyników A/B testów.","Identyfikację szans rynkowych i rekomendowanie działań.","Wsparcie w procesie planowania i budżetowania."],
+      "dayIntro": "Typowy dzień w Allegro to:",
+      "dayItems": ["Poranny przegląd dashboardów i kluczowych wskaźników.","Stand-up z zespołem analitycznym.","Praca nad raportami tygodniowymi i miesięcznymi.","Spotkania z product managerami i stakeholderami.","Analiza wyników bieżących kampanii.","Eksploracja danych w SQL i narzędziach BI.","Prezentacja wniosków dla zespołu."],
+      "required": ["Studia na kierunku analiza danych, statystyka lub pokrewnym.","Znajomość SQL na poziomie podstawowym lub średniozaawansowanym.","Umiejętność pracy z Excelem / Google Sheets.","Zdolność do logicznego myślenia i wyciągania wniosków z danych.","Dobra organizacja pracy i priorytyzacja zadań.","Komunikatywna znajomość języka angielskiego."],
+      "nice": "Doświadczenie z narzędziami BI (Tableau, Looker, Power BI). Znajomość Pythona lub R. Doświadczenie w branży e-commerce lub retail analytics.",
+      "chips": ["Myślenie analityczne","Orientacja na dane","Precyzja","Inicjatywa","Komunikatywność"],
+      "benefits": [["🏋️","Karta MultiSport"],["🏥","Prywatna opieka medyczna"],["🛍️","Vouchery Allegro"],["☕","Dofinansowanie posiłków"],["🅿️","Parking"],["📚","Budżet szkoleniowy"]],
+      "extra": ["Elastyczne godziny pracy (ruchomy start 7:00–10:00)","Praca hybrydowa (3 dni biuro, 2 zdalnie)","Platforma benefitów kafeteryjnych","Dofinansowanie nauki języków obcych"]
+    },
+    {
+      "id": "bloomroot",
+      "company": "Bloom & Root",
+      "role": "Analityk biznesowy",
+      "date": "24.11.2025, 17:45",
+      "type": "Praktykant / Stażysta / Młodszy specjalista (Junior)",
+      "location": "Warszawa, Wola",
+      "workMode": "Zdalna / Hybrydowa",
+      "schedule": "Pół etatu • Tymczasowa",
+      "salary": "10 500 – 16 266 PLN brutto",
+      "contracts": "Umowa o pracę, B2B",
+      "payChips": ["Godzinne","Stała podstawa"],
+      "payNote": "Rozliczanie: Godzinne, Stała podstawa",
+      "matchCount": 6,
+      "logoColor": "#1a3a2a",
+      "tags": "Praktykant/Stażysta / Młodszy specjalista (Junior) • Zdalna / Hybrydowa • UoP, B2B",
+      "about": "W Bloom & Root łączymy naturę z technologią. Tworzymy ekosystem cyfrowy, który pomaga ludziom i firmom rozwijać się w sposób zrównoważony. Nasze rozwiązania wspierają ekologiczne inicjatywy oraz transformację cyfrową w wielu sektorach.",
+      "tasksIntro": "Dołączając do naszego zespołu, będziesz odpowiedzialna za:",
+      "tasks": ["Analizę danych rynkowych i konkurencji.","Tworzenie raportów i prezentacji na podstawie analiz.","Współpracę z zespołami sprzedaży i marketingu.","Monitorowanie trendów rynkowych i rekomendowanie działań.","Uczestnictwo w tworzeniu strategii rozwoju firmy.","Wsparcie w procesie wdrażania nowych produktów i usług.","Analizę efektywności kampanii marketingowych."],
+      "dayIntro": "Typowy dzień w Bloom & Root to:",
+      "dayItems": ["Poranna analiza danych sprzedażowych i marketingowych.","Spotkania z zespołem w celu omówienia strategii.","Praca nad raportami i prezentacjami dla zarządu.","Współpraca z działem IT w zakresie systemów.","Uczestnictwo w planowaniu nowych kampanii.","Testowanie nowych narzędzi analitycznych.","Szkolenia i rozwój umiejętności.","Burze mózgów z zespołem.","Przygotowanie rekomendacji dla usprawnienia procesów."],
+      "required": ["Ukończone lub w trakcie studiów na kierunku analiza danych lub pokrewnym.","Znajomość narzędzi analitycznych (np. Excel, SQL).","Podstawowa wiedza z zakresu statystyki i analizy danych.","Komunikatywność i umiejętność pracy w zespole.","Dobra organizacja pracy i ustalanie priorytetów.","Znajomość języka angielskiego na poziomie komunikatywnym."],
+      "nice": "Znajomość języka Python lub R. Doświadczenie z narzędziami BI (Tableau, Power BI). Umiejętność tworzenia modeli predykcyjnych.",
+      "chips": ["Głęboke skupienie","Metodyczność","Myślenie analityczne","Praca z dokumentacją","Precyzja"],
+      "benefits": [["🅿️","Parking"],["🏥","Prywatna opieka medyczna"],["☕","Kawa i herbata"],["🤝","Inicjatywy dobroczynne"],["📚","Dofinansowanie nauki języków"]],
+      "extra": ["Służbowy telefon do użytku prywatnego","Elastyczne godziny pracy","Dofinansowanie dojazdów"]
+    },
+    {
+      "id": "skycash",
+      "company": "Skycash",
+      "role": "Analityk biznesowy",
+      "date": "22.11.2025, 09:10",
+      "type": "Praktykant / Stażysta",
+      "location": "Warszawa, Wola",
+      "workMode": "W pełni zdalna",
+      "schedule": "Pół etatu • Tymczasowa",
+      "salary": "11 000 – 17 500 PLN brutto",
+      "contracts": "B2B, Umowa o pracę",
+      "payChips": ["Godzinne","Stała podstawa"],
+      "payNote": "Rozliczanie: Godzinne, Stała podstawa",
+      "matchCount": 4,
+      "logoColor": "#0a1e30",
+      "tags": "Praktykant/Stażysta • W pełni zdalna • B2B, UoP",
+      "about": "Skycash to polska aplikacja mobilna do płatności i obsługi transportu publicznego, będąca liderem fintech w sektorze mobilności. Każdego dnia pomagamy milionom użytkowników w zarządzaniu przejazdami, opłatami parkingowymi i płatnościami za usługi komunalne.",
+      "tasksIntro": "W roli Analityka biznesowego w Skycash będziesz odpowiadać za:",
+      "tasks": ["Analizę danych transakcyjnych i zachowań użytkowników aplikacji.","Monitorowanie wskaźników aktywności i retencji klientów.","Przygotowanie raportów dla zespołów produktowych i biznesowych.","Identyfikację anomalii i potencjalnych nadużyć w danych.","Wsparcie przy projektowaniu nowych funkcjonalności na podstawie danych.","Analizę skuteczności kampanii akwizycyjnych."],
+      "dayIntro": "Twój dzień w Skycash:",
+      "dayItems": ["Poranna analiza dashboardów transakcyjnych.","Review alertów i anomalii w danych.","Praca nad raportem tygodniowym dla zarządu.","Spotkanie z Product Ownerem dotyczące nowych funkcji.","Eksploracja danych w BigQuery.","Testowanie hipotez analitycznych.","Dokumentowanie wyników analiz."],
+      "required": ["Studia na kierunku informatyka, analiza danych, matematyka lub pokrewnym.","Podstawowa znajomość SQL lub gotowość do szybkiej nauki.","Umiejętność pracy z arkuszami kalkulacyjnymi.","Analityczne myślenie i dbałość o szczegóły.","Znajomość języka angielskiego (B2)."],
+      "nice": "Doświadczenie z Google Analytics lub Firebase. Znajomość Pythona. Zainteresowanie branżą fintech lub mobilną.",
+      "chips": ["Analityczne myślenie","Dokładność","Skrupulatność","Ciekawość","Innowacyjność"],
+      "benefits": [["💻","MacBook Pro"],["🏥","Prywatna opieka medyczna"],["🎓","Szkolenia techniczne"],["🏠","Praca zdalna"],["🚴","Dofinansowanie sportu"]],
+      "extra": ["Elastyczne godziny pracy","Stock options po roku pracy","Dofinansowanie szkoleń i konferencji"]
+    },
+    {
+      "id": "airbnb",
+      "company": "Airbnb",
+      "role": "Analityk biznesowy",
+      "date": "21.11.2025, 14:30",
+      "type": "Praktykant / Stażysta",
+      "location": "Warszawa, Wola",
+      "workMode": "Zdalna / Hybrydowa",
+      "schedule": "Cały etat • Stała",
+      "salary": "13 000 – 20 000 PLN brutto",
+      "contracts": "Umowa o pracę",
+      "payChips": ["Miesięczne","Stała podstawa"],
+      "payNote": "Rozliczanie: Miesięczne, Stała podstawa",
+      "matchCount": 5,
+      "logoColor": "#fff0ef",
+      "tags": "Praktykant/Stażysta • Zdalna / Hybrydowa • UoP",
+      "about": "Airbnb to globalna platforma noclegowa i eventowa, łącząca gości z gospodarzami w ponad 220 krajach. Warszawskie biuro jest centrum operacyjnym na rynek Europy Środkowej i Wschodniej. Wierzymy, że każdy powinien móc poczuć się jak u siebie wszędzie na świecie.",
+      "tasksIntro": "Twoje zadania w Airbnb:",
+      "tasks": ["Analizę lokalnych rynków noclegowych i trendów cenowych.","Monitorowanie satysfakcji gości i gospodarzy w regionie CEE.","Przygotowywanie raportów rynkowych dla Regional Managera.","Analizę skuteczności kampanii pozyskiwania nowych gospodarzy.","Wsparcie przy optymalizacji algorytmów cenowych.","Identyfikację szans wzrostu w nowych miastach.","Analizę konkurencji na rynku krótkoterminowych najmu."],
+      "dayIntro": "Dzień w Airbnb wygląda tak:",
+      "dayItems": ["Poranny przegląd metryk rynkowych CEE.","Standup z regionalnym zespołem analitycznym.","Praca nad analizą dla projektu ekspansji.","Spotkanie z Marketing Managera dotyczące kampanii.","Przygotowanie slajdów do tygodniowego review.","Eksploracja danych w Tableau.","Sesja nauki angielskiego z native speakerem."],
+      "required": ["Studia na kierunku ekonomia, zarządzanie, analiza danych lub pokrewnym.","Umiejętność pracy z Excelem i tworzenia raportów.","Dobra komunikacja po angielsku (B2+) – codzienna praca w tym języku.","Zainteresowanie branżą travel lub marketplace.","Analityczne podejście do rozwiązywania problemów."],
+      "nice": "Doświadczenie z Tableau lub Looker. Znajomość SQL. Doświadczenie z rynkiem krótkoterminowego najmu.",
+      "chips": ["Globalne myślenie","Empatia","Analityczność","Innowacyjność","Ciekawość"],
+      "benefits": [["✈️","Kredyty podróżne Airbnb"],["🏥","Ubezpieczenie zdrowotne"],["🏠","Remote-first"],["📈","Opcje na akcje"],["🧘","Wellness budget"]],
+      "extra": ["15 dni pracy z dowolnego miejsca na świecie","Dofinansowanie pracy zdalnej","Miesięczne spotkania zespołu w biurze"]
+    },
+    {
+      "id": "ikea-wawa",
+      "company": "IKEA",
+      "role": "Analityk biznesowy",
+      "date": "20.11.2025, 10:00",
+      "type": "Praktykant / Stażysta",
+      "location": "Warszawa, Wola",
+      "workMode": "Stacjonarna / Hybrydowa",
+      "schedule": "Cały etat • Stała",
+      "salary": "9 800 – 14 500 PLN brutto",
+      "contracts": "Umowa o pracę",
+      "payChips": ["Miesięczne","Stała podstawa"],
+      "payNote": "Rozliczanie: Miesięczne, Stała podstawa",
+      "matchCount": 4,
+      "logoColor": "#0058a3",
+      "tags": "Praktykant/Stażysta • Stacjonarna / Hybrydowa • UoP",
+      "about": "IKEA to szwedzka sieć sklepów meblowych i artykułów do domu, obecna w Polsce od 1990 roku. Wierzymy, że dobrze zaprojektowane meble i wyposażenie wnętrz powinny być dostępne dla każdego. Nasze zespoły analityczne pomagają nam lepiej rozumieć potrzeby klientów i optymalizować doświadczenie zakupowe.",
+      "tasksIntro": "Jako Analityk biznesowy w IKEA będziesz odpowiadać za:",
+      "tasks": ["Analizę sprzedaży produktów i kategorii w sklepach i online.","Monitorowanie KPI sklepów i centrum dystrybucji.","Przygotowywanie raportów dla managerów kategorii.","Analizę satysfakcji klientów i ścieżki zakupowej.","Wsparcie przy optymalizacji asortymentu i layoutu sklepu.","Analizę efektywności działań marketingowych.","Identyfikację szans zwiększenia konwersji."],
+      "dayIntro": "Jak wygląda praca w IKEA:",
+      "dayItems": ["Poranna analiza sprzedaży poprzedniego dnia.","Przegląd wyników kluczowych kategorii.","Spotkanie z Category Managerem.","Praca nad raportem efektywności kampanii.","Analiza danych z badań satysfakcji klientów.","Weryfikacja danych magazynowych.","Przygotowanie prezentacji dla zarządu sklepu."],
+      "required": ["Studia z zakresu zarządzania, ekonomii, marketingu lub pokrewnego.","Bardzo dobra znajomość Excela (tabele przestawne, formuły zaawansowane).","Umiejętność czytania i interpretacji danych sprzedażowych.","Znajomość języka angielskiego (B1+).","Dobra organizacja i terminowość."],
+      "nice": "Znajomość SQL lub Power BI. Doświadczenie w handlu detalicznym. Znajomość języka szwedzkiego (miłe, ale nie wymagane).",
+      "chips": ["Praktyczne myślenie","Orientacja na klienta","Porządek","Systematyczność","Dokładność"],
+      "benefits": [["🛋️","Zniżka pracownicza 15%"],["🍽️","Dofinansowanie stołówki"],["🏥","Ubezpieczenie grupowe"],["🅿️","Bezpłatny parking"],["💪","Karta sportowa"]],
+      "extra": ["Elastyczne godziny pracy","Możliwość rozwoju w strukturach IKEA w Polsce i za granicą","Program mentoringowy"]
+    },
+    {
+      "id": "mixa-wawa",
+      "company": "Mixa",
+      "role": "Analityk biznesowy",
+      "date": "19.11.2025, 16:20",
+      "type": "Praktykant / Stażysta",
+      "location": "Warszawa, Wola",
+      "workMode": "Zdalna / Hybrydowa",
+      "schedule": "Pół etatu • Tymczasowa",
+      "salary": "8 500 – 13 000 PLN brutto",
+      "contracts": "B2B, Umowa zlecenie",
+      "payChips": ["Godzinne"],
+      "payNote": "Rozliczanie: Godzinne",
+      "matchCount": 5,
+      "logoColor": "#f0e8ff",
+      "tags": "Praktykant/Stażysta • Zdalna / Hybrydowa • B2B, UZ",
+      "about": "Mixa to butikowa agencja kreatywna specjalizująca się w digital marketingu, brandingu i strategii komunikacji. Pomagamy markom z całego świata wyróżnić się w cyfrowym świecie. Jesteśmy małym, ale zwinnym zespołem, gdzie każdy głos się liczy i każdy projekt robi różnicę.",
+      "tasksIntro": "Twoja rola w Mixa:",
+      "tasks": ["Analizę efektywności kampanii digitalowych (Google, Meta, LinkedIn).","Przygotowywanie raportów ROI dla klientów agencji.","Monitorowanie metryk social media i content marketingu.","Planowanie i interpretację testów A/B.","Analizę danych z Google Analytics i platform reklamowych.","Wsparcie przy tworzeniu strategii marketingowych.","Prezentację wyników klientom agencji."],
+      "dayIntro": "Dzień w Mixa:",
+      "dayItems": ["Poranny przegląd wyników kampanii klientów.","Standup kreatywny z zespołem.","Przygotowanie raportu tygodniowego dla 2–3 klientów.","Analiza danych z nowych kampanii.","Burza mózgów nad optymalizacją kontentu.","Tworzenie dashboardu w Looker Studio.","Piątkowe demo wyników dla całego zespołu."],
+      "required": ["Studia na kierunku marketing, komunikacja, analiza danych lub pokrewnym.","Znajomość Google Analytics (Universal lub GA4).","Podstawowa znajomość platform reklamowych (Meta Ads, Google Ads).","Zdolności analityczne i myślenie oparte na danych.","Komunikatywność i umiejętność prezentacji."],
+      "nice": "Znajomość Looker Studio lub Power BI. Certyfikat Google Analytics lub Meta Blueprint. Doświadczenie w branży agencyjnej.",
+      "chips": ["Kreatywność","Analityczność","Estetyka","Otwartość na eksperymenty","Komunikatywność"],
+      "benefits": [["🖥️","Laptop Mac"],["🎨","Kreatywne biuro"],["☕","Kawa i snacki"],["🍺","Piwo w piątek"],["📚","Budżet szkoleniowy"]],
+      "extra": ["Elastyczne godziny pracy","Praca hybrydowa lub pełne zdalne","Udział w konferencjach branżowych"]
+    },
+    {
+      "id": "paypal",
+      "company": "PayPal",
+      "role": "Analityk biznesowy",
+      "date": "18.11.2025, 12:45",
+      "type": "Młodszy specjalista (Junior)",
+      "location": "Warszawa, Wola",
+      "workMode": "W pełni zdalna",
+      "schedule": "Cały etat • Stała",
+      "salary": "14 000 – 22 000 PLN brutto",
+      "contracts": "B2B, Umowa o pracę",
+      "payChips": ["Miesięczne","Stała podstawa"],
+      "payNote": "Rozliczanie: Miesięczne, Stała podstawa",
+      "matchCount": 5,
+      "logoColor": "#003087",
+      "tags": "Młodszy specjalista (Junior) • W pełni zdalna • B2B, UoP",
+      "about": "PayPal to globalny lider płatności cyfrowych, umożliwiający transakcje w ponad 200 krajach i terytoriach. Nasze centrum technologiczne w Warszawie obsługuje projekty europejskie i globalne, stanowiąc jeden z kluczowych węzłów innowacji w sieci PayPal.",
+      "tasksIntro": "Jako Analityk biznesowy w PayPal będziesz:",
+      "tasks": ["Analizować dane transakcyjne i wskaźniki wydajności płatności.","Monitorować wskaźniki sukcesu transakcji i identyfikować obszary do poprawy.","Przygotowywać raporty compliance i regulacyjne.","Analizować zachowania użytkowników na platformie.","Wspierać zespoły produktowe danymi do podejmowania decyzji.","Identyfikować anomalie i potencjalne ryzyka w danych."],
+      "dayIntro": "Praca na co dzień w PayPal:",
+      "dayItems": ["Poranny przegląd metryk transakcyjnych.","Standup z globalnym zespołem (w j. angielskim).","Praca nad analizą kwartalną.","Spotkanie z Risk Team dotyczące anomalii.","Eksploracja danych w Tableau i SQL.","Przygotowanie raportu dla regulatora.","Review code w PR z feedbackiem analitycznym."],
+      "required": ["Studia na kierunku finanse, ekonomia, informatyka lub pokrewnym.","Dobra znajomość SQL.","Umiejętność pracy z dużymi zbiorami danych.","Biegła znajomość języka angielskiego – codzienna komunikacja.","Rozumienie podstawowych koncepcji finansowych i ryzyka."],
+      "nice": "Znajomość Pythona lub R. Doświadczenie z Tableau lub podobnymi narzędziami BI. Wiedza z zakresu regulacji finansowych (PSD2, GDPR).",
+      "chips": ["Precyzja","Analityczność","Rzetelność","Myślenie systemowe","Zorientowanie na wyniki"],
+      "benefits": [["📈","Akcje pracownicze (RSU)"],["🏥","Prywatna opieka medyczna"],["🏋️","Gym & wellness"],["🏠","Remote-first"],["🍽️","Lunch benefit"]],
+      "extra": ["Globalne możliwości kariery","Program mentoringowy z seniorami","Dofinansowanie certyfikacji zawodowych"]
+    },
+    {
+      "id": "znany",
+      "company": "Znany Lekarz",
+      "role": "Analityk biznesowy",
+      "date": "17.11.2025, 08:55",
+      "type": "Praktykant / Stażysta",
+      "location": "Warszawa, Wola",
+      "workMode": "Zdalna / Hybrydowa",
+      "schedule": "Pół etatu • Tymczasowa",
+      "salary": "10 000 – 15 500 PLN brutto",
+      "contracts": "Umowa o pracę, B2B",
+      "payChips": ["Godzinne","Stała podstawa"],
+      "payNote": "Rozliczanie: Godzinne, Stała podstawa",
+      "matchCount": 4,
+      "logoColor": "#00897b",
+      "tags": "Praktykant/Stażysta • Zdalna / Hybrydowa • UoP, B2B",
+      "about": "Znany Lekarz to największa w Polsce platforma medyczna, łącząca pacjentów ze specjalistami. Każdego miesiąca pomagamy milionom pacjentów znaleźć właściwego lekarza i umówić wizytę. Naszą misją jest demokratyzacja dostępu do opieki zdrowotnej poprzez technologię.",
+      "tasksIntro": "Twoja rola jako Analityk w Znany Lekarz:",
+      "tasks": ["Analizę ścieżki pacjenta i lejka rezerwacji wizyt.","Monitorowanie wskaźników satysfakcji pacjentów i lekarzy.","Przygotowywanie raportów dla Product i Growth teamów.","Analizę efektywności kanałów pozyskania nowych użytkowników.","Wsparcie przy optymalizacji procesu onboardingu lekarzy.","Identyfikację barier w korzystaniu z platformy.","Analizę retencji i churnu użytkowników."],
+      "dayIntro": "Praca w Znany Lekarz na co dzień:",
+      "dayItems": ["Przegląd metryk rezerwacji i aktywności użytkowników.","Spotkanie z Growth Teama.","Praca nad analizą retencji pacjentów.","Review wyników eksperymentów produktowych.","Eksploracja danych w Metabase.","Przygotowanie insightów dla działu marketingu.","Retrospekcja i planowanie tygodnia."],
+      "required": ["Studia z zakresu analiza danych, zdrowia publicznego, marketingu lub pokrewnego.","Podstawowa znajomość SQL lub chęć nauki.","Empatia i zrozumienie potrzeb użytkownika końcowego.","Dobra organizacja i komunikatywność.","Język angielski na poziomie roboczym."],
+      "nice": "Doświadczenie z Metabase lub Mixpanel. Znajomość zagadnień healthtech lub e-commerce. Doświadczenie w analizie produktowej.",
+      "chips": ["Empatia","Analityczność","Rzetelność","Odpowiedzialność","Skrupulatność"],
+      "benefits": [["🏥","Prywatna opieka medyczna (premium)"],["💪","Karta MultiSport"],["🎓","Budżet szkoleniowy"],["🕐","Elastyczne godziny"],["🌿","Wellness program"]],
+      "extra": ["Dostęp do platform konsultacji lekarskich","Praca zdalna lub hybrydowa","Program wellbeing i wsparcia psychologicznego"]
+    },
+    {
+      "id": "mixa-krakow",
+      "company": "Mixa",
+      "role": "Analityk biznesowy",
+      "date": "16.11.2025, 13:10",
+      "type": "Praktykant / Stażysta",
+      "location": "Kraków",
+      "workMode": "Hybrydowa",
+      "schedule": "Pół etatu • Tymczasowa",
+      "salary": "7 500 – 12 000 PLN brutto",
+      "contracts": "B2B, Umowa zlecenie",
+      "payChips": ["Godzinne"],
+      "payNote": "Rozliczanie: Godzinne",
+      "matchCount": 5,
+      "logoColor": "#f0e8ff",
+      "tags": "Praktykant/Stażysta • Hybrydowa • B2B, UZ",
+      "about": "Mixa to butikowa agencja kreatywna specjalizująca się w digital marketingu, brandingu i strategii komunikacji. Nasze krakowskie studio jest sercem kreatywności agencji – tu rodzą się kampanie, które wyróżniają marki na rynku.",
+      "tasksIntro": "Twoja rola w krakowskim studiu Mixa:",
+      "tasks": ["Analizę wyników kampanii prowadzonych dla klientów krakowskich i krajowych.","Przygotowywanie raportów i prezentacji dla klientów.","Monitorowanie metryk social media i paid media.","Wsparcie przy planowaniu mediów i budżetów kampanii.","Analizę danych w Google Analytics i Meta Business Suite.","Współpracę z copywriterami i grafikami nad optymalizacją treści."],
+      "dayIntro": "Krakowski dzień w Mixa:",
+      "dayItems": ["Poranna kawa i przegląd kampanii klientów.","Standup z lokalnym zespołem kreatywnym.","Przygotowanie raportu dla klienta.","Analiza wyników testów kreatywnych.","Sesja kreatywna z copywriterem.","Spotkanie z warsztatami z klientem.","Team lunch w Kazimierzu."],
+      "required": ["Studia na kierunku marketing, komunikacja lub pokrewnym.","Znajomość Google Analytics.","Podstawowa znajomość ekosystemu Meta Ads.","Zdolności analityczne i komunikatywność.","Chęć rozwijania się w branży kreatywnej."],
+      "nice": "Znajomość Looker Studio. Certyfikat Google Analytics. Portfolio z projektów szkolnych lub własnych.",
+      "chips": ["Kreatywność","Analityczność","Estetyka","Otwartość na eksperymenty","Komunikatywność"],
+      "benefits": [["💻","Laptop Mac"],["🎨","Kreatywne studio w Kazimierzu"],["☕","Kawa specialty"],["🍺","Piątkowe piwo"],["📚","Budżet szkoleniowy"]],
+      "extra": ["Elastyczne godziny pracy","Możliwość przejścia do pełnego etatu","Udział w lokalnych eventach branżowych"]
+    },
+    {
+      "id": "ikea-krakow",
+      "company": "IKEA",
+      "role": "Analityk biznesowy",
+      "date": "15.11.2025, 09:30",
+      "type": "Praktykant / Stażysta",
+      "location": "Kraków",
+      "workMode": "Stacjonarna / Hybrydowa",
+      "schedule": "Cały etat • Stała",
+      "salary": "9 000 – 13 500 PLN brutto",
+      "contracts": "Umowa o pracę",
+      "payChips": ["Miesięczne","Stała podstawa"],
+      "payNote": "Rozliczanie: Miesięczne, Stała podstawa",
+      "matchCount": 3,
+      "logoColor": "#0058a3",
+      "tags": "Praktykant/Stażysta • Stacjonarna / Hybrydowa • UoP",
+      "about": "IKEA Kraków to jeden z największych sklepów sieci w Polsce, obsługujący klientów z całego Małopolski. Nasz team analityczny dba o to, by decyzje biznesowe opierały się na rzetelnych danych – od zarządzania asortymentem po optymalizację doświadczenia zakupowego.",
+      "tasksIntro": "W IKEA Kraków będziesz odpowiadać za:",
+      "tasks": ["Analizę sprzedaży i trendów zakupowych w sklepie krakowskim.","Raportowanie wyników dla managerów działów.","Wsparcie przy planowaniu asortymentu sezonowego.","Analizę danych z programu lojalnościowego IKEA Family.","Monitorowanie wskaźników przepływu klientów w sklepie.","Przygotowywanie raportów dla centralnego działu analitycznego."],
+      "dayIntro": "Jak wygląda praca w IKEA Kraków:",
+      "dayItems": ["Poranna analiza wyników sprzedaży.","Spotkanie z managerem sekcji.","Praca nad raportem efektywności asortymentu.","Analiza danych IKEA Family.","Weryfikacja danych logistycznych.","Przygotowanie insightów do prezentacji.","Spacer po sklepie z managerem (store walk)."],
+      "required": ["Studia na kierunku zarządzanie, ekonomia lub pokrewnym.","Dobra znajomość Excela.","Zdolności analityczne i dbałość o szczegóły.","Komunikatywność i praca zespołowa.","Znajomość języka angielskiego (B1)."],
+      "nice": "Znajomość Power BI lub Tableau. Doświadczenie w retail. Znajomość języka szwedzkiego.",
+      "chips": ["Praktyczne myślenie","Orientacja na klienta","Porządek","Systematyczność","Dokładność"],
+      "benefits": [["🛋️","Zniżka pracownicza 15%"],["🍽️","Dotowana stołówka IKEA"],["🏥","Ubezpieczenie grupowe"],["🅿️","Bezpłatny parking"],["💪","Karta sportowa"]],
+      "extra": ["Możliwość awansu w sieci IKEA Polska","Dofinansowanie nauki języka angielskiego","Program Employee Assistance"]
+    }
+  ],
+  "employers": {
+    "bloomroot": {
+      "name": "Bloom & Root",
+      "meta": "Marketing i sprzedaż • 11–50 pracowników",
+      "about": "W Bloom & Root łączymy naturę z technologią. Tworzymy ekosystem cyfrowy, który pomaga ludziom i firmom rozwijać się w sposób zrównoważony.",
+      "mission": "W Bloom & Root wierzymy, że rozwój cyfrowy nie musi oznaczać odcięcia od świata rzeczywistego. Naszą misją jest tworzenie ekosystemu technologicznego, który nie tylko rozwiązuje problemy biznesowe, ale robi to w sposób zrównoważony i przyjazny dla człowieka. Chcemy, aby technologia była narzędziem, które daje oddech, a nie przytłacza.",
+      "values": ["Autentyczność","Współpraca","Tolerancja","Odpowiedzialność"],
+      "cultureDesc": "Charakterystyka środowiska pracy i oferowanych narzędzi wspierających.",
+      "cultureUnique": "To, co czyni nas wyjątkowymi, to podejście do pracy jako do żywego ekosystemu, a nie sztywnej struktury. Stawiamy na autentyczną neuroinkluzywność, projektując nasze procesy tak, aby wspierały różne style myślenia i chroniły przed przebodźcowaniem. Kluczowy jest dla nas szacunek do Twojego głębokiego skupienia – promujemy kulturę pracy głębokiej, eliminując zbędne rozpraszacze i spotkania. Nasze relacje oparte są na transparentnym partnerstwie i zaufaniu, gdzie każdy głos ma znaczenie, a granice prywatności są zawsze respektowane.",
+      "cultureSpace": ["Fidget toys","Roślinność wewnątrz"],
+      "cultureSensory": ["Dwa monitory na stanowisku pracy","Otwierane okna"],
+      "cultureComm": ["Jasno określone kryteria i obowiązki","Sztywna hierarchia"],
+      "erg": ["Grupa pracowników neuroatypowych","Grupa kobiet w technologii"],
+      "links": [{"icon":"language","label":"Strona firmy","url":"#"},{"icon":"linkedin","label":"LinkedIn","url":"#"},{"icon":"youtube","label":"You Tube","url":"#"}]
+    },
+    "allegro": {
+      "name": "Allegro",
+      "meta": "E-commerce • 1000+ pracowników",
+      "about": "Allegro to największa polska platforma handlowa z ponad 20 milionami aktywnych kupujących.",
+      "mission": "Naszą misją jest bycie platformą, która łączy sprzedawców i kupujących w sposób bezpieczny, wygodny i efektywny.",
+      "values": ["Innowacyjność","Transparentność","Odpowiedzialność","Różnorodność"],
+      "cultureDesc": "Dynamiczne środowisko pracy nastawione na innowacje i rozwój.",
+      "cultureUnique": "Stawiamy na data-driven decision making i ciągłe eksperymentowanie.",
+      "cultureSpace": ["Open space ze stałymi biurkami","Strefa aktywności fizycznej"],
+      "cultureSensory": ["Dwa monitory na stanowisku pracy","Dostęp do światła dziennego"],
+      "cultureComm": ["Kultura nieformalna","Regularna informacja zwrotna"],
+      "erg": ["Kobiety w technologii Allegro","Społeczność neuroróżnorodna"],
+      "links": [{"icon":"language","label":"Strona firmy","url":"#"},{"icon":"linkedin","label":"LinkedIn","url":"#"}]
+    }
+  },
+  "profile": {
+    "valuesChips": ["Autonomia","Autentyczność","Bezpieczeństwo","Odpowiedzialność","Prestiż","Przynależność","Rozwój osobisty","Równowaga (work-life balance)","Rywalizacja","Sprawczość","Sprawiedliwość","Tolerancja","Wiarygodność","Współpraca"],
+    "thinkingChips": ["Aktywne słuchanie","Bezpośredniość","Efektywność działania w zmianie","Eksperymentowanie","Elastyczność w działaniu","Empatyczna komunikacja","Głębokie skupienie","Łatwość nawiązywania relacji","Metodyczność","Myślenie analityczne","Myślenie wizualne","Nieszablonowe myślenie","Praca z dokumentacją","Precyzja","Zadania kreatywne","Wszechstronność"],
+    "boostData": {
+      "space": ["Biurka do pracy na stojąco","Duże okna","Fidget toys","Open space ze stałymi biurkami","Pokoje do pracy indywidualnej","Pokój regeneracji sensorycznej","Pokoje max do 4 osób","Przestronne pokoje pracy","Przezroczyste ściany","Roślinność wewnątrz","Strefa aktywności fizycznej","Wysokie sufity","(Wyznaczona) strefa pracy cichej"],
+      "sensory": ["Ciche klawiatury","Dostęp do światła dziennego","Dwa monitory na stanowisku pracy","Górne światło","Klimatyzacja","Migające światła/neony","Możliwość pracy w słuchawkach wyciszających","Odblaskowe powierzchnie","Oddzielna zamykana kuchnia","Odzież służbowa","Otwierane okna","Światło strefowe z możliwością regulacji","Wygłuszenia akustyczne"],
+      "culture": ["Częste rozmowy telefoniczne","Ciche poranki","Jasno określone kryteria i obowiązki","Kultura formalna","Kultura nieformalna","Online z włączoną kamerką","Small talki","Spontaniczne spotkania bez agendy","Regularna informacja zwrotna","Szkolenia wyjazdowe","Sztywna hierarchia","Wyjazdy integracyjne"]
+    },
+    "wizytowkaItems": ["Przesłuchanie planu spotkania z wyprzedzeniem","Cicha przestrzeń","Minimalizacja bodźców świetlnych","Precyzyjne pytania","Lepiej się koncentruję gdy używam fidget toys (np. piłeczka antystresowa), wykonuję drobne ruchy, rysuję","Dosłowność języka (bez metafor i hipotetyzowania)","Przesłanie podsumowania po spotkaniu","Preferuję praktyczne zadania","Rozpoczynanie rozmowy nie przychodzi mi naturalnie, weź na siebie tę rolę","Odczytywanie komunikatów niewerbalnych nie jest dla mnie naturalne; postaw na komunikację werbalną","Możliwość dosłania po spotkaniu uzupełnienia do udzielonych odpowiedzi","Utrzymywanie kontaktu wzrokowego nie jest dla mnie naturalne, ale słucham Cię z uwagą"]
+  }
+}
+</script>
+<script src="app.js"></script>
+</body>
+</html>

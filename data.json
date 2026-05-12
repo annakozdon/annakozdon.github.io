@@ -1,0 +1,623 @@
+{
+  "jobs": [
+    {
+      "id": "allegro",
+      "company": "Allegro",
+      "role": "Analityk biznesowy",
+      "date": "23.11.2025, 11:20",
+      "type": "Praktykant / Stażysta",
+      "location": "Warszawa, Wola",
+      "workMode": "Zdalna / Hybrydowa",
+      "schedule": "Pół etatu • Tymczasowa",
+      "salary": "10 500 – 16 200 PLN brutto",
+      "contracts": "Umowa o pracę, B2B",
+      "payChips": ["Godzinne", "Stała podstawa"],
+      "payNote": "Rozliczanie: Godzinne, Stała podstawa",
+      "matchCount": 5,
+      "logoColor": "#ff5500",
+      "tags": "Praktykant/Stażysta • Zdalna / Hybrydowa • UoP, B2B",
+      "about": "Allegro to największa polska platforma handlowa z ponad 20 milionami aktywnych kupujących. Jesteśmy liderem e-commerce w Polsce i jedną z największych platform w Europie Środkowej. Łączymy nowoczesne technologie z pasją do handlu, tworząc miejsce, gdzie każdy może kupić i sprzedać niemal wszystko.",
+      "tasksIntro": "Jako Analityk biznesowy w Allegro będziesz odpowiedzialny/a za:",
+      "tasks": [
+        "Analizę danych sprzedażowych i zachowań użytkowników platformy.",
+        "Tworzenie raportów i dashboardów dla zespołów produktowych.",
+        "Monitorowanie kluczowych KPI i identyfikację odchyleń od celów.",
+        "Współpracę z product managerami przy definiowaniu metryk sukcesu.",
+        "Przeprowadzanie analiz wyników A/B testów.",
+        "Identyfikację szans rynkowych i rekomendowanie działań.",
+        "Wsparcie w procesie planowania i budżetowania."
+      ],
+      "dayIntro": "Typowy dzień w Allegro to:",
+      "dayItems": [
+        "Poranny przegląd dashboardów i kluczowych wskaźników.",
+        "Stand-up z zespołem analitycznym.",
+        "Praca nad raportami tygodniowymi i miesięcznymi.",
+        "Spotkania z product managerami i stakeholderami.",
+        "Analiza wyników bieżących kampanii.",
+        "Eksploracja danych w SQL i narzędziach BI.",
+        "Prezentacja wniosków dla zespołu."
+      ],
+      "required": [
+        "Studia na kierunku analiza danych, statystyka lub pokrewnym.",
+        "Znajomość SQL na poziomie podstawowym lub średniozaawansowanym.",
+        "Umiejętność pracy z Excelem / Google Sheets.",
+        "Zdolność do logicznego myślenia i wyciągania wniosków z danych.",
+        "Dobra organizacja pracy i priorytyzacja zadań.",
+        "Komunikatywna znajomość języka angielskiego."
+      ],
+      "nice": "Doświadczenie z narzędziami BI (Tableau, Looker, Power BI). Znajomość Pythona lub R. Doświadczenie w branży e-commerce lub retail analytics.",
+      "chips": ["Myślenie analityczne", "Orientacja na dane", "Precyzja", "Inicjatywa", "Komunikatywność"],
+      "benefits": [["🏋️", "Karta MultiSport"], ["🏥", "Prywatna opieka medyczna"], ["🛍️", "Vouchery Allegro"], ["☕", "Dofinansowanie posiłków"], ["🅿️", "Parking"], ["📚", "Budżet szkoleniowy"]],
+      "extra": [
+        "Elastyczne godziny pracy (ruchomy start 7:00–10:00)",
+        "Praca hybrydowa (3 dni biuro, 2 zdalnie)",
+        "Platforma benefitów kafeteryjnych",
+        "Dofinansowanie nauki języków obcych"
+      ]
+    },
+    {
+      "id": "bloomroot",
+      "company": "Bloom & Root",
+      "role": "Analityk biznesowy",
+      "date": "24.11.2025, 17:45",
+      "type": "Praktykant / Stażysta / Młodszy specjalista (Junior)",
+      "location": "Warszawa, Wola",
+      "workMode": "Zdalna / Hybrydowa",
+      "schedule": "Pół etatu • Tymczasowa",
+      "salary": "10 500 – 16 266 PLN brutto",
+      "contracts": "Umowa o pracę, B2B",
+      "payChips": ["Godzinne", "Stała podstawa"],
+      "payNote": "Rozliczanie: Godzinne, Stała podstawa",
+      "matchCount": 6,
+      "logoColor": "#1a3a2a",
+      "tags": "Praktykant/Stażysta / Młodszy specjalista (Junior) • Zdalna / Hybrydowa • UoP, B2B",
+      "about": "W Bloom & Root łączymy naturę z technologią. Tworzymy ekosystem cyfrowy, który pomaga ludziom i firmom rozwijać się w sposób zrównoważony. Nasze rozwiązania wspierają ekologiczne inicjatywy oraz transformację cyfrową w wielu sektorach.",
+      "tasksIntro": "Dołączając do naszego zespołu, będziesz odpowiedzialna za:",
+      "tasks": [
+        "Analizę danych rynkowych i konkurencji.",
+        "Tworzenie raportów i prezentacji na podstawie analiz.",
+        "Współpracę z zespołami sprzedaży i marketingu.",
+        "Monitorowanie trendów rynkowych i rekomendowanie działań.",
+        "Uczestnictwo w tworzeniu strategii rozwoju firmy.",
+        "Wsparcie w procesie wdrażania nowych produktów i usług.",
+        "Analizę efektywności kampanii marketingowych."
+      ],
+      "dayIntro": "Typowy dzień w Bloom & Root to:",
+      "dayItems": [
+        "Poranna analiza danych sprzedażowych i marketingowych.",
+        "Spotkania z zespołem w celu omówienia strategii.",
+        "Praca nad raportami i prezentacjami dla zarządu.",
+        "Współpraca z działem IT w zakresie systemów.",
+        "Uczestnictwo w planowaniu nowych kampanii.",
+        "Testowanie nowych narzędzi analitycznych.",
+        "Szkolenia i rozwój umiejętności.",
+        "Burze mózgów z zespołem.",
+        "Przygotowanie rekomendacji dla usprawnienia procesów."
+      ],
+      "required": [
+        "Ukończone lub w trakcie studiów na kierunku analiza danych lub pokrewnym.",
+        "Znajomość narzędzi analitycznych (np. Excel, SQL).",
+        "Podstawowa wiedza z zakresu statystyki i analizy danych.",
+        "Komunikatywność i umiejętność pracy w zespole.",
+        "Dobra organizacja pracy i ustalanie priorytetów.",
+        "Znajomość języka angielskiego na poziomie komunikatywnym."
+      ],
+      "nice": "Znajomość języka Python lub R. Doświadczenie z narzędziami BI (Tableau, Power BI). Umiejętność tworzenia modeli predykcyjnych.",
+      "chips": ["Głęboke skupienie", "Metodyczność", "Myślenie analityczne", "Praca z dokumentacją", "Precyzja"],
+      "benefits": [["🅿️", "Parking"], ["🏥", "Prywatna opieka medyczna"], ["☕", "Kawa i herbata"], ["🤝", "Inicjatywy dobroczynne"], ["📚", "Dofinansowanie nauki języków"]],
+      "extra": [
+        "Służbowy telefon do użytku prywatnego",
+        "Elastyczne godziny pracy",
+        "Dofinansowanie dojazdów"
+      ]
+    },
+    {
+      "id": "skycash",
+      "company": "Skycash",
+      "role": "Analityk biznesowy",
+      "date": "22.11.2025, 09:10",
+      "type": "Praktykant / Stażysta",
+      "location": "Warszawa, Wola",
+      "workMode": "W pełni zdalna",
+      "schedule": "Pół etatu • Tymczasowa",
+      "salary": "11 000 – 17 500 PLN brutto",
+      "contracts": "B2B, Umowa o pracę",
+      "payChips": ["Godzinne", "Stała podstawa"],
+      "payNote": "Rozliczanie: Godzinne, Stała podstawa",
+      "matchCount": 4,
+      "logoColor": "#0a1e30",
+      "tags": "Praktykant/Stażysta • W pełni zdalna • B2B, UoP",
+      "about": "Skycash to polska aplikacja mobilna do płatności i obsługi transportu publicznego, będąca liderem fintech w sektorze mobilności. Każdego dnia pomagamy milionom użytkowników w zarządzaniu przejazdami, opłatami parkingowymi i płatnościami za usługi komunalne.",
+      "tasksIntro": "W roli Analityka biznesowego w Skycash będziesz odpowiadać za:",
+      "tasks": [
+        "Analizę danych transakcyjnych i zachowań użytkowników aplikacji.",
+        "Monitorowanie wskaźników aktywności i retencji klientów.",
+        "Przygotowanie raportów dla zespołów produktowych i biznesowych.",
+        "Identyfikację anomalii i potencjalnych nadużyć w danych.",
+        "Wsparcie przy projektowaniu nowych funkcjonalności na podstawie danych.",
+        "Analizę skuteczności kampanii akwizycyjnych."
+      ],
+      "dayIntro": "Twój dzień w Skycash:",
+      "dayItems": [
+        "Poranna analiza dashboardów transakcyjnych.",
+        "Review alertów i anomalii w danych.",
+        "Praca nad raportem tygodniowym dla zarządu.",
+        "Spotkanie z Product Ownerem dotyczące nowych funkcji.",
+        "Eksploracja danych w BigQuery.",
+        "Testowanie hipotez analitycznych.",
+        "Dokumentowanie wyników analiz."
+      ],
+      "required": [
+        "Studia na kierunku informatyka, analiza danych, matematyka lub pokrewnym.",
+        "Podstawowa znajomość SQL lub gotowość do szybkiej nauki.",
+        "Umiejętność pracy z arkuszami kalkulacyjnymi.",
+        "Analityczne myślenie i dbałość o szczegóły.",
+        "Znajomość języka angielskiego (B2)."
+      ],
+      "nice": "Doświadczenie z Google Analytics lub Firebase. Znajomość Pythona. Zainteresowanie branżą fintech lub mobilną.",
+      "chips": ["Analityczne myślenie", "Dokładność", "Skrupulatność", "Ciekawość", "Innowacyjność"],
+      "benefits": [["💻", "MacBook Pro"], ["🏥", "Prywatna opieka medyczna"], ["🎓", "Szkolenia techniczne"], ["🏠", "Praca zdalna"], ["🚴", "Dofinansowanie sportu"]],
+      "extra": [
+        "Elastyczne godziny pracy",
+        "Stock options po roku pracy",
+        "Dofinansowanie szkoleń i konferencji"
+      ]
+    },
+    {
+      "id": "airbnb",
+      "company": "Airbnb",
+      "role": "Analityk biznesowy",
+      "date": "21.11.2025, 14:30",
+      "type": "Praktykant / Stażysta",
+      "location": "Warszawa, Wola",
+      "workMode": "Zdalna / Hybrydowa",
+      "schedule": "Cały etat • Stała",
+      "salary": "13 000 – 20 000 PLN brutto",
+      "contracts": "Umowa o pracę",
+      "payChips": ["Miesięczne", "Stała podstawa"],
+      "payNote": "Rozliczanie: Miesięczne, Stała podstawa",
+      "matchCount": 5,
+      "logoColor": "#fff0ef",
+      "tags": "Praktykant/Stażysta • Zdalna / Hybrydowa • UoP",
+      "about": "Airbnb to globalna platforma noclegowa i eventowa, łącząca gości z gospodarzami w ponad 220 krajach. Warszawskie biuro jest centrum operacyjnym na rynek Europy Środkowej i Wschodniej. Wierzymy, że każdy powinien móc poczuć się jak u siebie wszędzie na świecie.",
+      "tasksIntro": "Twoje zadania w Airbnb:",
+      "tasks": [
+        "Analizę lokalnych rynków noclegowych i trendów cenowych.",
+        "Monitorowanie satysfakcji gości i gospodarzy w regionie CEE.",
+        "Przygotowywanie raportów rynkowych dla Regional Managera.",
+        "Analizę skuteczności kampanii pozyskiwania nowych gospodarzy.",
+        "Wsparcie przy optymalizacji algorytmów cenowych.",
+        "Identyfikację szans wzrostu w nowych miastach.",
+        "Analizę konkurencji na rynku krótkoterminowych najmu."
+      ],
+      "dayIntro": "Dzień w Airbnb wygląda tak:",
+      "dayItems": [
+        "Poranny przegląd metryk rynkowych CEE.",
+        "Standup z regionalnym zespołem analitycznym.",
+        "Praca nad analizą dla projektu ekspansji.",
+        "Spotkanie z Marketing Managera dotyczące kampanii.",
+        "Przygotowanie slajdów do tygodniowego review.",
+        "Eksploracja danych w Tableau.",
+        "Sesja nauki angielskiego z native speakerem."
+      ],
+      "required": [
+        "Studia na kierunku ekonomia, zarządzanie, analiza danych lub pokrewnym.",
+        "Umiejętność pracy z Excelem i tworzenia raportów.",
+        "Dobra komunikacja po angielsku (B2+) – codzienna praca w tym języku.",
+        "Zainteresowanie branżą travel lub marketplace.",
+        "Analityczne podejście do rozwiązywania problemów."
+      ],
+      "nice": "Doświadczenie z Tableau lub Looker. Znajomość SQL. Doświadczenie z rynkiem krótkoterminowego najmu.",
+      "chips": ["Globalne myślenie", "Empatia", "Analityczność", "Innowacyjność", "Ciekawość"],
+      "benefits": [["✈️", "Kredyty podróżne Airbnb"], ["🏥", "Ubezpieczenie zdrowotne"], ["🏠", "Remote-first"], ["📈", "Opcje na akcje"], ["🧘", "Wellness budget"]],
+      "extra": [
+        "15 dni pracy z dowolnego miejsca na świecie",
+        "Dofinansowanie pracy zdalnej",
+        "Miesięczne spotkania zespołu w biurze"
+      ]
+    },
+    {
+      "id": "ikea-wawa",
+      "company": "IKEA",
+      "role": "Analityk biznesowy",
+      "date": "20.11.2025, 10:00",
+      "type": "Praktykant / Stażysta",
+      "location": "Warszawa, Wola",
+      "workMode": "Stacjonarna / Hybrydowa",
+      "schedule": "Cały etat • Stała",
+      "salary": "9 800 – 14 500 PLN brutto",
+      "contracts": "Umowa o pracę",
+      "payChips": ["Miesięczne", "Stała podstawa"],
+      "payNote": "Rozliczanie: Miesięczne, Stała podstawa",
+      "matchCount": 4,
+      "logoColor": "#0058a3",
+      "tags": "Praktykant/Stażysta • Stacjonarna / Hybrydowa • UoP",
+      "about": "IKEA to szwedzka sieć sklepów meblowych i artykułów do domu, obecna w Polsce od 1990 roku. Wierzymy, że dobrze zaprojektowane meble i wyposażenie wnętrz powinny być dostępne dla każdego. Nasze zespoły analityczne pomagają nam lepiej rozumieć potrzeby klientów i optymalizować doświadczenie zakupowe.",
+      "tasksIntro": "Jako Analityk biznesowy w IKEA będziesz odpowiadać za:",
+      "tasks": [
+        "Analizę sprzedaży produktów i kategorii w sklepach i online.",
+        "Monitorowanie KPI sklepów i centrum dystrybucji.",
+        "Przygotowywanie raportów dla managerów kategorii.",
+        "Analizę satysfakcji klientów i ścieżki zakupowej.",
+        "Wsparcie przy optymalizacji asortymentu i layoutu sklepu.",
+        "Analizę efektywności działań marketingowych.",
+        "Identyfikację szans zwiększenia konwersji."
+      ],
+      "dayIntro": "Jak wygląda praca w IKEA:",
+      "dayItems": [
+        "Poranna analiza sprzedaży poprzedniego dnia.",
+        "Przegląd wyników kluczowych kategorii.",
+        "Spotkanie z Category Managerem.",
+        "Praca nad raportem efektywności kampanii.",
+        "Analiza danych z badań satysfakcji klientów.",
+        "Weryfikacja danych magazynowych.",
+        "Przygotowanie prezentacji dla zarządu sklepu."
+      ],
+      "required": [
+        "Studia z zakresu zarządzania, ekonomii, marketingu lub pokrewnego.",
+        "Bardzo dobra znajomość Excela (tabele przestawne, formuły zaawansowane).",
+        "Umiejętność czytania i interpretacji danych sprzedażowych.",
+        "Znajomość języka angielskiego (B1+).",
+        "Dobra organizacja i terminowość."
+      ],
+      "nice": "Znajomość SQL lub Power BI. Doświadczenie w handlu detalicznym. Znajomość języka szwedzkiego (miłe, ale nie wymagane).",
+      "chips": ["Praktyczne myślenie", "Orientacja na klienta", "Porządek", "Systematyczność", "Dokładność"],
+      "benefits": [["🛋️", "Zniżka pracownicza 15%"], ["🍽️", "Dofinansowanie stołówki"], ["🏥", "Ubezpieczenie grupowe"], ["🅿️", "Bezpłatny parking"], ["💪", "Karta sportowa"]],
+      "extra": [
+        "Elastyczne godziny pracy",
+        "Możliwość rozwoju w strukturach IKEA w Polsce i za granicą",
+        "Program mentoringowy"
+      ]
+    },
+    {
+      "id": "mixa-wawa",
+      "company": "Mixa",
+      "role": "Analityk biznesowy",
+      "date": "19.11.2025, 16:20",
+      "type": "Praktykant / Stażysta",
+      "location": "Warszawa, Wola",
+      "workMode": "Zdalna / Hybrydowa",
+      "schedule": "Pół etatu • Tymczasowa",
+      "salary": "8 500 – 13 000 PLN brutto",
+      "contracts": "B2B, Umowa zlecenie",
+      "payChips": ["Godzinne"],
+      "payNote": "Rozliczanie: Godzinne",
+      "matchCount": 5,
+      "logoColor": "#f0e8ff",
+      "tags": "Praktykant/Stażysta • Zdalna / Hybrydowa • B2B, UZ",
+      "about": "Mixa to butikowa agencja kreatywna specjalizująca się w digital marketingu, brandingu i strategii komunikacji. Pomagamy markom z całego świata wyróżnić się w cyfrowym świecie. Jesteśmy małym, ale zwinnym zespołem, gdzie każdy głos się liczy i każdy projekt robi różnicę.",
+      "tasksIntro": "Twoja rola w Mixa:",
+      "tasks": [
+        "Analizę efektywności kampanii digitalowych (Google, Meta, LinkedIn).",
+        "Przygotowywanie raportów ROI dla klientów agencji.",
+        "Monitorowanie metryk social media i content marketingu.",
+        "Planowanie i interpretację testów A/B.",
+        "Analizę danych z Google Analytics i platform reklamowych.",
+        "Wsparcie przy tworzeniu strategii marketingowych.",
+        "Prezentację wyników klientom agencji."
+      ],
+      "dayIntro": "Dzień w Mixa:",
+      "dayItems": [
+        "Poranny przegląd wyników kampanii klientów.",
+        "Standup kreatywny z zespołem.",
+        "Przygotowanie raportu tygodniowego dla 2–3 klientów.",
+        "Analiza danych z nowych kampanii.",
+        "Burza mózgów nad optymalizacją kontentu.",
+        "Tworzenie dashboardu w Looker Studio.",
+        "Piątkowe demo wyników dla całego zespołu."
+      ],
+      "required": [
+        "Studia na kierunku marketing, komunikacja, analiza danych lub pokrewnym.",
+        "Znajomość Google Analytics (Universal lub GA4).",
+        "Podstawowa znajomość platform reklamowych (Meta Ads, Google Ads).",
+        "Zdolności analityczne i myślenie oparte na danych.",
+        "Komunikatywność i umiejętność prezentacji."
+      ],
+      "nice": "Znajomość Looker Studio lub Power BI. Certyfikat Google Analytics lub Meta Blueprint. Doświadczenie w branży agencyjnej.",
+      "chips": ["Kreatywność", "Analityczność", "Estetyka", "Otwartość na eksperymenty", "Komunikatywność"],
+      "benefits": [["🖥️", "Laptop Mac"], ["🎨", "Kreatywne biuro"], ["☕", "Kawa i snacki"], ["🍺", "Piwo w piątek"], ["📚", "Budżet szkoleniowy"]],
+      "extra": [
+        "Elastyczne godziny pracy",
+        "Praca hybrydowa lub pełne zdalne",
+        "Udział w konferencjach branżowych"
+      ]
+    },
+    {
+      "id": "paypal",
+      "company": "PayPal",
+      "role": "Analityk biznesowy",
+      "date": "18.11.2025, 12:45",
+      "type": "Młodszy specjalista (Junior)",
+      "location": "Warszawa, Wola",
+      "workMode": "W pełni zdalna",
+      "schedule": "Cały etat • Stała",
+      "salary": "14 000 – 22 000 PLN brutto",
+      "contracts": "B2B, Umowa o pracę",
+      "payChips": ["Miesięczne", "Stała podstawa"],
+      "payNote": "Rozliczanie: Miesięczne, Stała podstawa",
+      "matchCount": 5,
+      "logoColor": "#003087",
+      "tags": "Młodszy specjalista (Junior) • W pełni zdalna • B2B, UoP",
+      "about": "PayPal to globalny lider płatności cyfrowych, umożliwiający transakcje w ponad 200 krajach i terytoriach. Nasze centrum technologiczne w Warszawie obsługuje projekty europejskie i globalne, stanowiąc jeden z kluczowych węzłów innowacji w sieci PayPal.",
+      "tasksIntro": "Jako Analityk biznesowy w PayPal będziesz:",
+      "tasks": [
+        "Analizować dane transakcyjne i wskaźniki wydajności płatności.",
+        "Monitorować wskaźniki sukcesu transakcji i identyfikować obszary do poprawy.",
+        "Przygotowywać raporty compliance i regulacyjne.",
+        "Analizować zachowania użytkowników na platformie.",
+        "Wspierać zespoły produktowe danymi do podejmowania decyzji.",
+        "Identyfikować anomalie i potencjalne ryzyka w danych."
+      ],
+      "dayIntro": "Praca na co dzień w PayPal:",
+      "dayItems": [
+        "Poranny przegląd metryk transakcyjnych.",
+        "Standup z globalnym zespołem (w j. angielskim).",
+        "Praca nad analizą kwartalną.",
+        "Spotkanie z Risk Team dotyczące anomalii.",
+        "Eksploracja danych w Tableau i SQL.",
+        "Przygotowanie raportu dla regulatora.",
+        "Review code w PR z feedbackiem analitycznym."
+      ],
+      "required": [
+        "Studia na kierunku finanse, ekonomia, informatyka lub pokrewnym.",
+        "Dobra znajomość SQL.",
+        "Umiejętność pracy z dużymi zbiorami danych.",
+        "Biegła znajomość języka angielskiego – codzienna komunikacja.",
+        "Rozumienie podstawowych koncepcji finansowych i ryzyka."
+      ],
+      "nice": "Znajomość Pythona lub R. Doświadczenie z Tableau lub podobnymi narzędziami BI. Wiedza z zakresu regulacji finansowych (PSD2, GDPR).",
+      "chips": ["Precyzja", "Analityczność", "Rzetelność", "Myślenie systemowe", "Zorientowanie na wyniki"],
+      "benefits": [["📈", "Akcje pracownicze (RSU)"], ["🏥", "Prywatna opieka medyczna"], ["🏋️", "Gym & wellness"], ["🏠", "Remote-first"], ["🍽️", "Lunch benefit"]],
+      "extra": [
+        "Globalne możliwości kariery",
+        "Program mentoringowy z seniorami",
+        "Dofinansowanie certyfikacji zawodowych"
+      ]
+    },
+    {
+      "id": "znany",
+      "company": "Znany Lekarz",
+      "role": "Analityk biznesowy",
+      "date": "17.11.2025, 08:55",
+      "type": "Praktykant / Stażysta",
+      "location": "Warszawa, Wola",
+      "workMode": "Zdalna / Hybrydowa",
+      "schedule": "Pół etatu • Tymczasowa",
+      "salary": "10 000 – 15 500 PLN brutto",
+      "contracts": "Umowa o pracę, B2B",
+      "payChips": ["Godzinne", "Stała podstawa"],
+      "payNote": "Rozliczanie: Godzinne, Stała podstawa",
+      "matchCount": 4,
+      "logoColor": "#00897b",
+      "tags": "Praktykant/Stażysta • Zdalna / Hybrydowa • UoP, B2B",
+      "about": "Znany Lekarz to największa w Polsce platforma medyczna, łącząca pacjentów ze specjalistami. Każdego miesiąca pomagamy milionom pacjentów znaleźć właściwego lekarza i umówić wizytę. Naszą misją jest demokratyzacja dostępu do opieki zdrowotnej poprzez technologię.",
+      "tasksIntro": "Twoja rola jako Analityk w Znany Lekarz:",
+      "tasks": [
+        "Analizę ścieżki pacjenta i lejka rezerwacji wizyt.",
+        "Monitorowanie wskaźników satysfakcji pacjentów i lekarzy.",
+        "Przygotowywanie raportów dla Product i Growth teamów.",
+        "Analizę efektywności kanałów pozyskania nowych użytkowników.",
+        "Wsparcie przy optymalizacji procesu onboardingu lekarzy.",
+        "Identyfikację barier w korzystaniu z platformy.",
+        "Analizę retencji i churnu użytkowników."
+      ],
+      "dayIntro": "Praca w Znany Lekarz na co dzień:",
+      "dayItems": [
+        "Przegląd metryk rezerwacji i aktywności użytkowników.",
+        "Spotkanie z Growth Teama.",
+        "Praca nad analizą retencji pacjentów.",
+        "Review wyników eksperymentów produktowych.",
+        "Eksploracja danych w Metabase.",
+        "Przygotowanie insightów dla działu marketingu.",
+        "Retrospekcja i planowanie tygodnia."
+      ],
+      "required": [
+        "Studia z zakresu analiza danych, zdrowia publicznego, marketingu lub pokrewnego.",
+        "Podstawowa znajomość SQL lub chęć nauki.",
+        "Empatia i zrozumienie potrzeb użytkownika końcowego.",
+        "Dobra organizacja i komunikatywność.",
+        "Język angielski na poziomie roboczym."
+      ],
+      "nice": "Doświadczenie z Metabase lub Mixpanel. Znajomość zagadnień healthtech lub e-commerce. Doświadczenie w analizie produktowej.",
+      "chips": ["Empatia", "Analityczność", "Rzetelność", "Odpowiedzialność", "Skrupulatność"],
+      "benefits": [["🏥", "Prywatna opieka medyczna (premium)"], ["💪", "Karta MultiSport"], ["🎓", "Budżet szkoleniowy"], ["🕐", "Elastyczne godziny"], ["🌿", "Wellness program"]],
+      "extra": [
+        "Dostęp do platform konsultacji lekarskich",
+        "Praca zdalna lub hybrydowa",
+        "Program wellbeing i wsparcia psychologicznego"
+      ]
+    },
+    {
+      "id": "mixa-krakow",
+      "company": "Mixa",
+      "role": "Analityk biznesowy",
+      "date": "16.11.2025, 13:10",
+      "type": "Praktykant / Stażysta",
+      "location": "Kraków",
+      "workMode": "Hybrydowa",
+      "schedule": "Pół etatu • Tymczasowa",
+      "salary": "7 500 – 12 000 PLN brutto",
+      "contracts": "B2B, Umowa zlecenie",
+      "payChips": ["Godzinne"],
+      "payNote": "Rozliczanie: Godzinne",
+      "matchCount": 5,
+      "logoColor": "#f0e8ff",
+      "tags": "Praktykant/Stażysta • Hybrydowa • B2B, UZ",
+      "about": "Mixa to butikowa agencja kreatywna specjalizująca się w digital marketingu, brandingu i strategii komunikacji. Nasze krakowskie studio jest sercem kreatywności agencji – tu rodzą się kampanie, które wyróżniają marki na rynku.",
+      "tasksIntro": "Twoja rola w krakowskim studiu Mixa:",
+      "tasks": [
+        "Analizę wyników kampanii prowadzonych dla klientów krakowskich i krajowych.",
+        "Przygotowywanie raportów i prezentacji dla klientów.",
+        "Monitorowanie metryk social media i paid media.",
+        "Wsparcie przy planowaniu mediów i budżetów kampanii.",
+        "Analizę danych w Google Analytics i Meta Business Suite.",
+        "Współpracę z copywriterami i grafikami nad optymalizacją treści."
+      ],
+      "dayIntro": "Krakowski dzień w Mixa:",
+      "dayItems": [
+        "Poranna kawa i przegląd kampanii klientów.",
+        "Standup z lokalnym zespołem kreatywnym.",
+        "Przygotowanie raportu dla klienta.",
+        "Analiza wyników testów kreatywnych.",
+        "Sesja kreatywna z copywriterem.",
+        "Spotkanie z warsztatami z klientem.",
+        "Team lunch w Kazimierzu."
+      ],
+      "required": [
+        "Studia na kierunku marketing, komunikacja lub pokrewnym.",
+        "Znajomość Google Analytics.",
+        "Podstawowa znajomość ekosystemu Meta Ads.",
+        "Zdolności analityczne i komunikatywność.",
+        "Chęć rozwijania się w branży kreatywnej."
+      ],
+      "nice": "Znajomość Looker Studio. Certyfikat Google Analytics. Portfolio z projektów szkolnych lub własnych.",
+      "chips": ["Kreatywność", "Analityczność", "Estetyka", "Otwartość na eksperymenty", "Komunikatywność"],
+      "benefits": [["💻", "Laptop Mac"], ["🎨", "Kreatywne studio w Kazimierzu"], ["☕", "Kawa specialty"], ["🍺", "Piątkowe piwo"], ["📚", "Budżet szkoleniowy"]],
+      "extra": [
+        "Elastyczne godziny pracy",
+        "Możliwość przejścia do pełnego etatu",
+        "Udział w lokalnych eventach branżowych"
+      ]
+    },
+    {
+      "id": "ikea-krakow",
+      "company": "IKEA",
+      "role": "Analityk biznesowy",
+      "date": "15.11.2025, 09:30",
+      "type": "Praktykant / Stażysta",
+      "location": "Kraków",
+      "workMode": "Stacjonarna / Hybrydowa",
+      "schedule": "Cały etat • Stała",
+      "salary": "9 000 – 13 500 PLN brutto",
+      "contracts": "Umowa o pracę",
+      "payChips": ["Miesięczne", "Stała podstawa"],
+      "payNote": "Rozliczanie: Miesięczne, Stała podstawa",
+      "matchCount": 3,
+      "logoColor": "#0058a3",
+      "tags": "Praktykant/Stażysta • Stacjonarna / Hybrydowa • UoP",
+      "about": "IKEA Kraków to jeden z największych sklepów sieci w Polsce, obsługujący klientów z całego Małopolski. Nasz team analityczny dba o to, by decyzje biznesowe opierały się na rzetelnych danych – od zarządzania asortymentem po optymalizację doświadczenia zakupowego.",
+      "tasksIntro": "W IKEA Kraków będziesz odpowiadać za:",
+      "tasks": [
+        "Analizę sprzedaży i trendów zakupowych w sklepie krakowskim.",
+        "Raportowanie wyników dla managerów działów.",
+        "Wsparcie przy planowaniu asortymentu sezonowego.",
+        "Analizę danych z programu lojalnościowego IKEA Family.",
+        "Monitorowanie wskaźników przepływu klientów w sklepie.",
+        "Przygotowywanie raportów dla centralnego działu analitycznego."
+      ],
+      "dayIntro": "Jak wygląda praca w IKEA Kraków:",
+      "dayItems": [
+        "Poranna analiza wyników sprzedaży.",
+        "Spotkanie z managerem sekcji.",
+        "Praca nad raportem efektywności asortymentu.",
+        "Analiza danych IKEA Family.",
+        "Weryfikacja danych logistycznych.",
+        "Przygotowanie insightów do prezentacji.",
+        "Spacer po sklepie z managerem (store walk)."
+      ],
+      "required": [
+        "Studia na kierunku zarządzanie, ekonomia lub pokrewnym.",
+        "Dobra znajomość Excela.",
+        "Zdolności analityczne i dbałość o szczegóły.",
+        "Komunikatywność i praca zespołowa.",
+        "Znajomość języka angielskiego (B1)."
+      ],
+      "nice": "Znajomość Power BI lub Tableau. Doświadczenie w retail. Znajomość języka szwedzkiego.",
+      "chips": ["Praktyczne myślenie", "Orientacja na klienta", "Porządek", "Systematyczność", "Dokładność"],
+      "benefits": [["🛋️", "Zniżka pracownicza 15%"], ["🍽️", "Dotowana stołówka IKEA"], ["🏥", "Ubezpieczenie grupowe"], ["🅿️", "Bezpłatny parking"], ["💪", "Karta sportowa"]],
+      "extra": [
+        "Możliwość awansu w sieci IKEA Polska",
+        "Dofinansowanie nauki języka angielskiego",
+        "Program Employee Assistance"
+      ]
+    }
+  ],
+  "employers": {
+    "bloomroot": {
+      "name": "Bloom & Root",
+      "meta": "Marketing i sprzedaż • 11–50 pracowników",
+      "about": "W Bloom & Root łączymy naturę z technologią. Tworzymy ekosystem cyfrowy, który pomaga ludziom i firmom rozwijać się w sposób zrównoważony.",
+      "mission": "W Bloom & Root wierzymy, że rozwój cyfrowy nie musi oznaczać odcięcia od świata rzeczywistego. Naszą misją jest tworzenie ekosystemu technologicznego, który nie tylko rozwiązuje problemy biznesowe, ale robi to w sposób zrównoważony i przyjazny dla człowieka. Chcemy, aby technologia była narzędziem, które daje oddech, a nie przytłacza.",
+      "values": ["Autentyczność", "Współpraca", "Tolerancja", "Odpowiedzialność"],
+      "cultureDesc": "Charakterystyka środowiska pracy i oferowanych narzędzi wspierających.",
+      "cultureUnique": "To, co czyni nas wyjątkowymi, to podejście do pracy jako do żywego ekosystemu, a nie sztywnej struktury. Stawiamy na autentyczną neuroinkluzywność, projektując nasze procesy tak, aby wspierały różne style myślenia i chroniły przed przebodźcowaniem. Kluczowy jest dla nas szacunek do Twojego głębokiego skupienia – promujemy kulturę pracy głębokiej, eliminując zbędne rozpraszacze i spotkania. Nasze relacje oparte są na transparentnym partnerstwie i zaufaniu, gdzie każdy głos ma znaczenie, a granice prywatności są zawsze respektowane.",
+      "cultureSpace": ["Fidget toys", "Roślinność wewnątrz"],
+      "cultureSensory": ["Dwa monitory na stanowisku pracy", "Otwierane okna"],
+      "cultureComm": ["Jasno określone kryteria i obowiązki", "Sztywna hierarchia"],
+      "erg": ["Grupa pracowników neuroatypowych", "Grupa kobiet w technologii"],
+      "links": [
+        { "icon": "language", "label": "Strona firmy", "url": "#" },
+        { "icon": "linkedin", "label": "LinkedIn", "url": "#" },
+        { "icon": "youtube", "label": "You Tube", "url": "#" }
+      ]
+    },
+    "allegro": {
+      "name": "Allegro",
+      "meta": "E-commerce • 1000+ pracowników",
+      "about": "Allegro to największa polska platforma handlowa z ponad 20 milionami aktywnych kupujących.",
+      "mission": "Naszą misją jest bycie platformą, która łączy sprzedawców i kupujących w sposób bezpieczny, wygodny i efektywny.",
+      "values": ["Innowacyjność", "Transparentność", "Odpowiedzialność", "Różnorodność"],
+      "cultureDesc": "Dynamiczne środowisko pracy nastawione na innowacje i rozwój.",
+      "cultureUnique": "Stawiamy na data-driven decision making i ciągłe eksperymentowanie.",
+      "cultureSpace": ["Open space ze stałymi biurkami", "Strefa aktywności fizycznej"],
+      "cultureSensory": ["Dwa monitory na stanowisku pracy", "Dostęp do światła dziennego"],
+      "cultureComm": ["Kultura nieformalna", "Regularna informacja zwrotna"],
+      "erg": ["Kobiety w technologii Allegro", "Społeczność neuroróżnorodna"],
+      "links": [
+        { "icon": "language", "label": "Strona firmy", "url": "#" },
+        { "icon": "linkedin", "label": "LinkedIn", "url": "#" }
+      ]
+    }
+  },
+  "profile": {
+    "valuesChips": [
+      "Autonomia", "Autentyczność", "Bezpieczeństwo", "Odpowiedzialność", "Prestiż",
+      "Przynależność", "Rozwój osobisty", "Równowaga (work-life balance)", "Rywalizacja",
+      "Sprawczość", "Sprawiedliwość", "Tolerancja", "Wiarygodność", "Współpraca"
+    ],
+    "thinkingChips": [
+      "Aktywne słuchanie", "Bezpośredniość", "Efektywność działania w zmianie",
+      "Eksperymentowanie", "Elastyczność w działaniu", "Empatyczna komunikacja",
+      "Głębokie skupienie", "Łatwość nawiązywania relacji", "Metodyczność",
+      "Myślenie analityczne", "Myślenie wizualne", "Nieszablonowe myślenie",
+      "Praca z dokumentacją", "Precyzja", "Zadania kreatywne", "Wszechstronność"
+    ],
+    "boostData": {
+      "space": [
+        "Biurka do pracy na stojąco", "Duże okna", "Fidget toys",
+        "Open space ze stałymi biurkami", "Pokoje do pracy indywidualnej",
+        "Pokój regeneracji sensorycznej", "Pokoje max do 4 osób",
+        "Przestronne pokoje pracy", "Przezroczyste ściany", "Roślinność wewnątrz",
+        "Strefa aktywności fizycznej", "Wysokie sufity", "(Wyznaczona) strefa pracy cichej"
+      ],
+      "sensory": [
+        "Ciche klawiatury", "Dostęp do światła dziennego", "Dwa monitory na stanowisku pracy",
+        "Górne światło", "Klimatyzacja", "Migające światła/neony",
+        "Możliwość pracy w słuchawkach wyciszających", "Odblaskowe powierzchnie",
+        "Oddzielna zamykana kuchnia", "Odzież służbowa", "Otwierane okna",
+        "Światło strefowe z możliwością regulacji", "Wygłuszenia akustyczne"
+      ],
+      "culture": [
+        "Częste rozmowy telefoniczne", "Ciche poranki",
+        "Jasno określone kryteria i obowiązki", "Kultura formalna", "Kultura nieformalna",
+        "Online z włączoną kamerką", "Small talki", "Spontaniczne spotkania bez agendy",
+        "Regularna informacja zwrotna", "Szkolenia wyjazdowe", "Sztywna hierarchia",
+        "Wyjazdy integracyjne"
+      ]
+    },
+    "wizytowkaItems": [
+      "Przesłuchanie planu spotkania z wyprzedzeniem",
+      "Cicha przestrzeń",
+      "Minimalizacja bodźców świetlnych",
+      "Precyzyjne pytania",
+      "Lepiej się koncentruję gdy używam fidget toys (np. piłeczka antystresowa), wykonuję drobne ruchy, rysuję",
+      "Dosłowność języka (bez metafor i hipotetyzowania)",
+      "Przesłanie podsumowania po spotkaniu",
+      "Preferuję praktyczne zadania",
+      "Rozpoczynanie rozmowy nie przychodzi mi naturalnie, weź na siebie tę rolę",
+      "Odczytywanie komunikatów niewerbalnych nie jest dla mnie naturalne; postaw na komunikację werbalną",
+      "Możliwość dosłania po spotkaniu uzupełnienia do udzielonych odpowiedzi",
+      "Utrzymywanie kontaktu wzrokowego nie jest dla mnie naturalne, ale słucham Cię z uwagą"
+    ]
+  }
+}
