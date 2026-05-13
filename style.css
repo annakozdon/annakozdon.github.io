@@ -231,7 +231,7 @@ body{
 
 footer{
     position:relative;
-    bottom:44px;
+    bottom:0;
     padding:28px 16px 44px;
     border-top:1px solid var(--border);
     display:flex;
