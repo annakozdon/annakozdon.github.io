@@ -39,7 +39,7 @@
     </button>
   </section>
 
-  <section aria-labelledby="latest-h">
+  <section  style="flex:1 1 auto; height:auto" aria-labelledby="latest-h">
     <h2 class="section-heading" id="latest-h">Najnowsze oferty</h2>
     <ul class="jobs-list" id="home-list" role="list"></ul>
     <button class="see-all-btn" onclick="goToResults()">
@@ -1160,6 +1160,22 @@
   }
 }
 </script>
+<script src="https://code.jquery.com/jquery-4.0.0.min.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <script src="app.js"></script>
+<script>
+  $(document).on("pagecreate",()=>{jQuery( window ).on( "swipeleft", function( event ) 
+  {
+    history.back();
+  });
+});
+</script>
+<script>
+  window.addEventListener("popstate", (e) => {
+                // Here you'd determine the actual data to render.
+                // For simplicity the identifier itself is rendered.
+                goBack();
+            });
+</script>
 </body>
 </html>

@@ -194,6 +194,7 @@ function _doShowScreen(id){
   });
   const el=document.getElementById(id);
   if(!el) return;
+  history.pushState({id: id}, "")
   el.classList.add('active');
   el.removeAttribute('aria-hidden');
   el.scrollTop=0;
