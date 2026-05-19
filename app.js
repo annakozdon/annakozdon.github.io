@@ -427,7 +427,9 @@ function fillMatches(job, ismatch){
   boost_data=d.profile.boostData.space.concat(d.profile.boostData.culture, d.profile.boostData.sensory);
   deboost_data=job.chipsNegative;
 
-  console.log(job, ismatch)
+  console.log("In fillMatches");
+  console.log(job);
+  console.log(ismatch);
 
   var count=ismatch==="match"? job.matchCount: ismatch==="mismatch"? job.mismatchCount: 0
 
@@ -439,7 +441,7 @@ function fillMatches(job, ismatch){
       var positive_count=count<boost_data.length? count: boost_data.length;
 
       for (var i=0;i<positive_count;i++) {
-        bucket.push(getRandomFromBucket(bucket))
+        bucket.push(getRandomFromBucket(boost_data))
       };
       break;
     
@@ -447,7 +449,7 @@ function fillMatches(job, ismatch){
       var negative_count=count<deboost_data.length? count: deboost_data.length;
 
       for (var i=0;i<negative_count;i++) {
-        bucket.push(getRandomFromBucket(bucket))
+        bucket.push(getRandomFromBucket(deboost_data))
       };
       break;
 
