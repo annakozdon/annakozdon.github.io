@@ -310,7 +310,7 @@ function showJobDetail(id){
   </div>`).join('');
   document.getElementById('dt-match-title-minus').textContent=`Warto mieć na uwadze`;
   document.getElementById('dt-match-chips-minus').innerHTML=mismatches.map((e)=>`<div class="match-pill" style="display: inline-flex; align-content: center; align-items: center; border: 1px; background: #F0BABA; color: #C83232; borderColor: #C83232">
-    <div class="cs-icon material-symbols-outlined" style="color: #C83232;">thumb_down</div><div class="match-pill-text">${e}</div>
+    <div class="cs-icon material-symbols-outlined" style="color: #C83232;">thumb_down</div><div class="match-pill-text" style="color: #C83232">${e}</div>
   </div>`).join('');
 
   document.getElementById('dt-about').textContent=job.about;
