@@ -305,11 +305,11 @@ function showJobDetail(id){
   document.getElementById('dt-match-text-plus').textContent=`${job.matchCount} dopasowanych cech`;;
   document.getElementById('dt-match-text-minus').textContent=`${job.mismatchCount} różnic(e) - sprawdź przed aplikacją`;
   document.getElementById('dt-match-title-plus').textContent=`To was łączy`;
-  document.getElementById('dt-match-chips-plus').innerHTML=matches.map((e)=>`<div class="chip" style="display: inline-flex; align-items: center; border: 1px; background: #B8DFC0; color: #28A35A; borderColor: #28A35A">
+  document.getElementById('dt-match-chips-plus').innerHTML=matches.map((e)=>`<div class="chip" style="display: inline-flex; align-content: center; align-items: center; border: 1px; background: #B8DFC0; color: #28A35A; borderColor: #28A35A">
     <div class="cs-icon material-symbols-outlined" style="color: #28A35A;">thumb_up</div> ${e}
   </div>`).join('');
   document.getElementById('dt-match-title-minus').textContent=`Warto mieć na uwadze`;
-  document.getElementById('dt-match-chips-minus').innerHTML=mismatches.map((e)=>`<div class="chip" style="display: inline-flex; align-items: center; border: 1px; background: #F0BABA; color: #C83232; borderColor: #C83232">
+  document.getElementById('dt-match-chips-minus').innerHTML=mismatches.map((e)=>`<div class="chip" style="display: inline-flex; align-content: center; align-items: center; border: 1px; background: #F0BABA; color: #C83232; borderColor: #C83232">
     <div class="cs-icon material-symbols-outlined" style="color: #C83232;">thumb_down</div> ${e}
   </div>`).join('');
 
