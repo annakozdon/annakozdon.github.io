@@ -200,14 +200,9 @@ body{
 
 .pill-outlined{
     display:flex;
-    align-items:center;
-    justify-content:center;
     gap:8px;
     padding:13px 16px;
     background:var(--surface);
-    color:var(--ink);
-    border:1.5px solid var(--border);
-    border-radius:var(--rb);
     font-size:13px;
     font-weight:600;
 }
