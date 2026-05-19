@@ -200,6 +200,7 @@ body{
 
 .pill-outlined{
     display:flex;
+    flex-wrap:wrap;
     gap:8px;
     padding:13px 16px;
     background:var(--surface);
