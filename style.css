@@ -913,8 +913,8 @@ color:var(--ink)
     align-items:center;
     gap:6px;
     padding:13px 14px;
-    background:var(--green-bg);
-    border:1.5px solid var(--green-b);
+    background:var(--bg);
+    border:1.5px solid var(--border);
     border-radius:var(--rb);
     cursor:pointer;
     flex-shrink:0;
