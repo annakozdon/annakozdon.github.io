@@ -302,7 +302,7 @@ function showJobDetail(id){
   document.getElementById('dt-paychips').innerHTML=job.payChips.map(c=>`<span class="salary-chip">${c}</span>`).join('');
   document.getElementById('dt-paynote').textContent=job.payNote;
 
-  document.getElementById('dt-match-text-plus').textContent=`${job.matchCount} dopasowanych cech`
+  document.getElementById('dt-match-text-plus').textContent=`${job.matchCount} dopasowanych cech`;;
   document.getElementById('dt-match-text-minus').textContent=`${job.mismatchCount} różnic(e) - sprawdź przed aplikacją`;
   document.getElementById('dt-match-title-plus').textContent=`To was łączy`;
   document.getElementById('dt-match-chips-plus').innerHTML=matches.map((e)=>`<div class="chip" style="border: 1px; background: #B8DFC0; color: #28A35A; borderColor: #28A35A">
