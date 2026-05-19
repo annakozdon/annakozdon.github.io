@@ -296,13 +296,13 @@ function showJobDetail(id){
   document.getElementById('dt-paychips').innerHTML=job.payChips.map(c=>`<span class="salary-chip">${c}</span>`).join('');
   document.getElementById('dt-paynote').textContent=job.payNote;
 
-  document.getElementById('dt-match-text').textContent=`${job.matchCount} dopasowanych cech\n${job.mismatchCount} różnic(e) - sprawdź przed aplikacją`;
+  document.getElementById('dt-match-text').textContent=`${job.matchCount} dopasowanych cech${<><br/><br/></>}${job.mismatchCount} różnic(e) - sprawdź przed aplikacją`;
   document.getElementById('dt-match-title-plus').textContent=`To was łączy`;
-  document.getElementById('dt-match-chips-plus').innerHTML=fillMatches(job, "match").map((e)=>`<span class="chip" style="background: #B8DFC0; color: #28A35A; borderColor: #28A35A">
+  document.getElementById('dt-match-chips-plus').innerHTML=fillMatches(job, "match").map((e)=>`<span class="chip" style="border: 1px; background: #B8DFC0; color: #28A35A; borderColor: #28A35A">
     <span class="cs-icon material-symbols-outlined" style="color: #28A35A;">thumb_up</span> ${e}
   </span>`).join('');
   document.getElementById('dt-match-title-minus').textContent=`Warto mieć na uwadze`;
-  document.getElementById('dt-match-chips-minus').innerHTML=fillMatches(job, "mismatch").map((e)=>`<span class="chip" style="background: #F0BABA; color: #C83232; borderColor: #C83232">
+  document.getElementById('dt-match-chips-minus').innerHTML=fillMatches(job, "mismatch").map((e)=>`<span class="chip" style="border: 1px; background: #F0BABA; color: #C83232; borderColor: #C83232">
     <span class="cs-icon material-symbols-outlined" style="color: #C83232;">thumb_down</span> ${e}
   </span>`).join('');
 
@@ -421,6 +421,8 @@ function fillMatches(job, ismatch){
   BOOST_DATA=d.profile.boostData.space.concat(d.profile.boostData.culture, d.profile.boostData.sensory);
   DEBOOST_DATA=job.chipsNegative;
 
+  console.log(job, ismatch)
+
   var count=ismatch==="match"? job.matchCount: ismatch==="mismatch"? job.mismatchCount: 0
 
   bucket=[];
@@ -444,6 +446,7 @@ function fillMatches(job, ismatch){
       break;
 
   }
+  console.log(bucket)
   
   return bucket
 
