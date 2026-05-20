@@ -253,6 +253,7 @@ body{
     font-family:inherit;
     transition:background .15s;
     field-sizing:inherit;
+    width:stretch;
 }
 
 .btn-outlined:active{
@@ -952,7 +953,6 @@ color:var(--ink)
 }
 .match-pill-text{
     text-wrap:wrap;
-    flex-wrap:wrap;
     font-size:13px;
     font-weight:700;
     color:var(--green);
