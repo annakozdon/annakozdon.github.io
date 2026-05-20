@@ -935,10 +935,13 @@ color:var(--ink)
     box-shadow:var(--shadow);
     width: inherit;
     border-top:none;
+    transition:background .15s
 }
 
 .match-expanded.open{
-    display:block
+    display:block;
+    background:#f5f0eb;
+
 }
 
 .match-exp-title{
