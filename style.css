@@ -214,6 +214,26 @@ body{
     background:#f5f0eb;
 }
 
+.btn-outlined-wrapper{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    background:var(--surface);
+    color:var(--ink);
+    border:1.5px solid var(--border);
+    border-radius:var(--rb);
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+    font-family:inherit;
+    transition:background .15s;
+}
+
+.btn-outlined-wrapper:active{
+    background:#f5f0eb;
+}
+
 .btn-outlined{
     display:flex;
     align-items:center;
@@ -229,12 +249,10 @@ body{
     cursor:pointer;
     font-family:inherit;
     transition:background .15s;
-    width: 100%;
 }
 
 .btn-outlined:active{
     background:#f5f0eb;
-    width:100%;
 }
 
 .chip{
