@@ -1537,7 +1537,8 @@ color:var(--ink)
 }
 
 .action-row{
-    padding:14px 16px
+    padding:14px 16px;
+    gap:0
 }
 
 .about-card{
