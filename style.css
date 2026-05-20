@@ -950,13 +950,15 @@ color:var(--ink)
     border-radius:var(--rb);
     cursor:pointer;
     flex-shrink:0;
-    font-family:inherit
+    font-family:inherit;
+    max-width:100%;
 }
 .match-pill-text{
     flex-wrap:wrap;
     font-size:13px;
     font-weight:700;
-    color:var(--green)
+    color:var(--green);
+    max-width:100%;
 }
 
 .match-expanded{
