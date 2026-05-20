@@ -219,7 +219,7 @@ body{
     align-items:center;
     justify-content:center;
     gap:8px;
-    padding:13px 16px;
+    padding:13px 0px;
     background:var(--surface);
     color:var(--ink);
     border:1.5px solid var(--border);
