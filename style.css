@@ -251,14 +251,14 @@ body{
     cursor:pointer;
     font-family:inherit;
     transition:background .15s;
-    field-sizing:inherit;
+    width:stretch;
     flex-grow:1;
 
 }
 
 .btn-outlined:active{
     background:#f5f0eb;
-    field-sizing:inherit;
+    width:stretch;
     flex-grow:1;
 }
 
