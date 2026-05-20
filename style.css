@@ -230,12 +230,10 @@ body{
     cursor:pointer;
     font-family:inherit;
     transition:background .15s;
-    width:stretch;
 }
 
 .btn-outlined-wrapper:active{
     background:#f5f0eb;
-    width:stretch;
 }
 
 .btn-outlined{
