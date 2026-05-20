@@ -929,6 +929,7 @@ color:var(--ink)
 .match-expanded{
     display:none;
     background:var(--surface);
+    border:1.5px solid var(--border);
     border-radius:0 0 var(--rc) var(--rc);
     padding:0px 16px 14px;
     box-shadow:var(--shadow);

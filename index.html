@@ -245,25 +245,27 @@
     </button>
   </div>
   <div class="action-row" style="display: grid">
-    <button class="btn-outlined" id="match-btn" onclick="toggleMatch()" aria-expanded="false" aria-controls="match-exp">
-      
-      <span class="match-pill-text" id="dt-match-text">
-        <div style="display: inline-flex; align-items: center"><div class="cs-icon material-symbols-outlined" style="color: #28A35A;">handshake</div><div id="dt-match-text-plus"></div></div>
-        <div id="dt-match-text-minus" style="color: #2E3540; font-weight: 500;"></div>
-      </span>
-      <span id="match-chevron" class="material-symbols-outlined" style="font-size: 14px; color: var(--green); transition:transform .2s">expand_more</span>
-    </button>
-    <div class="match-expanded" id="match-exp" style="margin-top: -8px;">
-      <br/>
-      <hr>
-      <br/>
-      <div class="match-exp-title" id="dt-match-title-plus" style="color: #171F2B;"></div>
-      <br/>
-      <span class="pill-outlined" id="dt-match-chips-plus"></span>
-      <br/><br/>
-      <div class="match-exp-title" id="dt-match-title-minus" style="color: #171F2B;"></div>
-      <br/>
-      <span class="pill-outlined" id="dt-match-chips-minus"></span>
+    <div class="btn-outlined">
+      <button class="btn-outlined" id="match-btn" style="border: none; box-shadow: none" onclick="toggleMatch()" aria-expanded="false" aria-controls="match-exp">
+        
+        <span class="match-pill-text" id="dt-match-text">
+          <div style="display: inline-flex; align-items: center"><div class="cs-icon material-symbols-outlined" style="color: #28A35A;">handshake</div><div id="dt-match-text-plus"></div></div>
+          <div id="dt-match-text-minus" style="color: #2E3540; font-weight: 500;"></div>
+        </span>
+        <span id="match-chevron" class="material-symbols-outlined" style="font-size: 14px; color: var(--green); transition:transform .2s">expand_more</span>
+      </button>
+      <div class="match-expanded" id="match-exp">
+        <br/>
+        <hr>
+        <br/>
+        <div class="match-exp-title" id="dt-match-title-plus" style="color: #171F2B;"></div>
+        <br/>
+        <span class="pill-outlined" id="dt-match-chips-plus"></span>
+        <br/><br/>
+        <div class="match-exp-title" id="dt-match-title-minus" style="color: #171F2B;"></div>
+        <br/>
+        <span class="pill-outlined" id="dt-match-chips-minus"></span>
+      </div>
     </div>
   </div>
 
