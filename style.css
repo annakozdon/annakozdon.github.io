@@ -228,8 +228,6 @@ body{
 
 .btn-outlined:active{
     background:#f5f0eb;
-    border-radius:var(--rb) var(--rb) 0 0;
-    border-bottom: none
 }
 
 .chip{
