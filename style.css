@@ -254,7 +254,6 @@ body{
     transition:background .15s;
     field-sizing:inherit;
     box-sizing:border-box;
-    flex-grow:1;
 
 }
 
@@ -942,7 +941,6 @@ color:var(--ink)
 }
 .match-pill{
     display:flex;
-    flex-wrap:wrap;
     align-items:center;
     gap:6px;
     padding:13px 14px;
