@@ -198,6 +198,45 @@ body{
     cursor:default
 }
 
+.pill-outlined{
+    display:flex;
+    grid-auto-flow: row dense;
+    flex-wrap:wrap;
+    gap:8px;
+    padding:13px 16px;
+    background:var(--surface);
+    font-size:13px;
+    font-weight:600;
+    height:auto;
+    transition:background .15s;
+}
+
+.pill-outlined:active{
+    background:#f5f0eb;
+}
+
+.btn-outlined-wrapper{
+    width:stretcj;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:13px 16px;
+    background:var(--surface);
+    color:var(--ink);
+    border:1.5px solid var(--border);
+    border-radius:var(--rb);
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+    font-family:inherit;
+    transition:background .15s;
+}
+
+.btn-outlined-wrapper:active{
+    background:#f5f0eb;
+}
+
 .btn-outlined{
     display:flex;
     align-items:center;
@@ -212,11 +251,13 @@ body{
     font-weight:600;
     cursor:pointer;
     font-family:inherit;
-    transition:background .15s
+    transition:background .15s;
+    field-sizing:inherit;
+    width:stretch;
 }
 
 .btn-outlined:active{
-    background:#f5f0eb
+    background:#f5f0eb;
 }
 
 .chip{
@@ -232,7 +273,7 @@ body{
 footer{
     position:relative;
     bottom:0;
-    padding:28px 16px 56px;
+    padding:28px 16px 68px;
     border-top:1px solid var(--border);
     display:flex;
     flex-direction:column;
@@ -902,30 +943,41 @@ color:var(--ink)
     align-items:center;
     gap:6px;
     padding:13px 14px;
-    background:var(--green-bg);
-    border:1.5px solid var(--green-b);
+    background:var(--bg);
+    border:1.5px solid var(--border);
     border-radius:var(--rb);
     cursor:pointer;
     flex-shrink:0;
-    font-family:inherit
+    font-family:inherit;
+    max-width:100%;
 }
 .match-pill-text{
+    text-wrap:wrap;
     font-size:13px;
     font-weight:700;
-    color:var(--green)
+    color:var(--green);
+    max-width:100%;
 }
 
 .match-expanded{
     display:none;
-    margin:0 16px 14px;
     background:var(--surface);
-    border-radius:var(--rc);
-    padding:14px 16px;
-    box-shadow:var(--shadow)
+    border:1.5px solid var(--border);
+    border-radius:0 0 var(--rc) var(--rc);
+    padding:0px 16px 14px;
+    box-shadow:var(--shadow);
+    width: inherit;
+    border-top:none;
+    transition:background .15s
+}
+
+.match-expanded:active{
+    background:#f5f0eb;
 }
 
 .match-expanded.open{
-    display:block
+    display:block;
+
 }
 
 .match-exp-title{
@@ -1523,7 +1575,8 @@ color:var(--ink)
 }
 
 .action-row{
-    padding:0 16px 14px
+    padding:14px 16px;
+    gap:0
 }
 
 .about-card{

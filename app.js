@@ -282,6 +282,12 @@ function showJobDetail(id){
   const job=JOBS.find(j=>j.id===id);
   if(!job) return;
 
+  var matches=fillMatches(job, "match");
+  var mismatches=fillMatches(job, "mismatch");
+
+  console.log(matches);
+  console.log(mismatches);
+
   document.getElementById('dt-date').textContent='Data dodania: '+job.date;
   document.getElementById('dt-logo').innerHTML=`<div class="detail-logo" style="${logoStyle(job)}">${LOGOS[id]||''}</div>`;
   document.getElementById('dt-company').textContent=job.company;
@@ -296,8 +302,16 @@ function showJobDetail(id){
   document.getElementById('dt-paychips').innerHTML=job.payChips.map(c=>`<span class="salary-chip">${c}</span>`).join('');
   document.getElementById('dt-paynote').textContent=job.payNote;
 
-  document.getElementById('dt-match-text').textContent=`${job.matchCount} dopasowanych cech`;
-  document.getElementById('dt-match-title').textContent=`${job.matchCount} cech pasuje do Twojego profilu`;
+  document.getElementById('dt-match-text-plus').textContent=`${job.matchCount} dopasowanych cech`;;
+  document.getElementById('dt-match-text-minus').textContent=`${job.mismatchCount} różnic - sprawdź przed aplikacją`;
+  document.getElementById('dt-match-title-plus').textContent=`To was łączy`;
+  document.getElementById('dt-match-chips-plus').innerHTML=matches.map((e)=>`<div class="match-pill" style="height: auto; gap: 8px; padding: 6px 16px; border-color: #28A35A; display: flex; flex-direction: row; align-items: center; background: #B8DFC0; color: #28A35A; borderColor: #28A35A">
+    <div class="cs-icon material-symbols-outlined" style="color: #28A35A;">thumb_up</div><div class="match-pill-text">${e}</div>
+  </div>`).join('');
+  document.getElementById('dt-match-title-minus').textContent=`Warto mieć na uwadze`;
+  document.getElementById('dt-match-chips-minus').innerHTML=mismatches.map((e)=>`<div class="match-pill" style="height: auto; gap: 8px; padding: 6px 16px; border-color: #C83232; display: flex; flex-direction: row; align-items: center; background: #F0BABA; color: #C83232; borderColor: #C83232">
+    <div class="cs-icon material-symbols-outlined" style="color: #C83232;">thumb_down</div><div class="match-pill-text" style="color: #C83232">${e}</div>
+  </div>`).join('');
 
   document.getElementById('dt-about').textContent=job.about;
 
@@ -402,6 +416,48 @@ function toggleFav(){
     icon.style.color='#1c1b2e';
     btn.style.borderColor='';
   }
+}
+
+function getRandomFromBucket(bucket) {
+   var randomIndex = Math.floor(Math.random()*bucket.length);
+   return bucket.splice(randomIndex, 1)[0];
+}
+
+function fillMatches(job, ismatch){
+  const d=JSON.parse(document.getElementById('app-data').textContent);
+  boost_data=d.profile.boostData.space.concat(d.profile.boostData.culture, d.profile.boostData.sensory);
+  deboost_data=job.chipsNegative;
+
+  console.log("In fillMatches");
+
+  console.log(job);
+  console.log(ismatch);
+
+  var count=ismatch==="match"? job.matchCount: ismatch==="mismatch"? job.mismatchCount: 0
+
+  bucket=[];
+
+  switch (ismatch) {
+
+    case "match":
+      var positive_count=count<boost_data.length? count: boost_data.length;
+
+      for (var i=0;i<positive_count;i++) {
+        bucket.push(getRandomFromBucket(boost_data))
+      };
+      break;
+    
+    case "mismatch":
+      var negative_count=count<deboost_data.length? count: deboost_data.length;
+
+      for (var i=0;i<negative_count;i++) {
+        bucket.push(getRandomFromBucket(deboost_data))
+      };
+      break;
+
+  }
+  console.log(bucket)
+  return bucket;
 }
 
 function toggleMatch(){

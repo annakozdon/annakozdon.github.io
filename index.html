@@ -49,6 +49,9 @@
   </section>
 
   <footer class="footer"><a href="#">O nas</a><a href="#">Baza wiedzy</a><a href="#">Polityka prywatności</a><a href="#">Kontakt</a></footer>
+  <div>
+    <br/>
+  </div>
 </main>
 
 <!-- ══════════════════ SCREEN 2 – FILTERS ══════════════════ -->
@@ -240,17 +243,32 @@
       <span id="fav-icon" class="material-symbols-outlined" style="font-size: 16px; color: var(--ink);">favorite_border</span>
       Dodaj do ulubionych
     </button>
-    <button class="match-pill" id="match-btn" onclick="toggleMatch()" aria-expanded="false" aria-controls="match-exp">
-      <span class="material-symbols-outlined" style="font-size: 15px; color: var(--green);">check</span>
-      <span class="match-pill-text" id="dt-match-text"></span>
-      <span id="match-chevron" class="material-symbols-outlined" style="font-size: 14px; color: var(--green); transition:transform .2s">expand_more</span>
-    </button>
+  </div>
+  <div class="action-row" style="display: grid">
+    <div class="btn-outlined-wrapper" style="display: flex; flex-direction: column;">
+      <button class="btn-outlined" id="match-btn" style="padding: 0px; border: 0; margin: 0; box-shadow: none; background: inherit; " onclick="toggleMatch()" aria-expanded="false" aria-controls="match-exp">
+        <span class="match-pill-text" id="dt-match-text">
+          <div style="display: inline-flex; align-items: center"><div class="cs-icon material-symbols-outlined" style="color: #28A35A;">handshake</div><div id="dt-match-text-plus"></div></div>
+          <div id="dt-match-text-minus" style="color: #2E3540; font-weight: 500;"></div>
+        </span>
+        <span id="match-chevron" class="material-symbols-outlined" style="font-size: 14px; color: var(--green); transition:transform .2s">expand_more</span>
+      </button>
+      <div class="match-expanded" id="match-exp" style="width: 100%; border: none; box-shadow: none; background: inherit;">
+        <br/>
+        <hr>
+        <br/>
+        <div class="match-exp-title" id="dt-match-title-plus" style="color: #171F2B;"></div>
+        <br/>
+        <span class="pill-outlined" style="background: inherit; width: 100%" id="dt-match-chips-plus"></span>
+        <br/><br/>
+        <div class="match-exp-title" id="dt-match-title-minus" style="color: #171F2B;"></div>
+        <br/>
+        <span class="pill-outlined" style="background: inherit; width: 100%" id="dt-match-chips-minus"></span>
+      </div>
+    </div>
   </div>
 
-  <div class="match-expanded" id="match-exp">
-    <div class="match-exp-title" id="dt-match-title"></div>
-    <p class="match-exp-text">Twój profil jest bardzo dobrze dopasowany do tej oferty.<br><br><strong>5 różni</strong> – sprawdź przez aplikację, które cechy warto rozwinąć.</p>
-  </div>
+
 
   <div class="about-card"><h2 class="about-card-title">O firmie</h2><p class="about-card-text" id="dt-about"></p></div>
 
@@ -861,6 +879,7 @@
       "payChips": ["Godzinne", "Stała podstawa"],
       "payNote": "Rozliczanie: Godzinne, Stała podstawa",
       "matchCount": 5,
+      "mismatchCount": 3,
       "logoColor": "#ff5500",
       "tags": "Praktykant/Stażysta • Zdalna / Hybrydowa • UoP, B2B",
       "about": "Allegro to największa polska platforma handlowa z ponad 20 milionami aktywnych kupujących. Jesteśmy liderem e-commerce w Polsce i jedną z największych platform w Europie Środkowej. Łączymy nowoczesne technologie z pasją do handlu, tworząc miejsce, gdzie każdy może kupić i sprzedać niemal wszystko.",
@@ -871,6 +890,7 @@
       "required": ["Studia na kierunku analiza danych, statystyka lub pokrewnym.","Znajomość SQL na poziomie podstawowym lub średniozaawansowanym.","Umiejętność pracy z Excelem / Google Sheets.","Zdolność do logicznego myślenia i wyciągania wniosków z danych.","Dobra organizacja pracy i priorytyzacja zadań.","Komunikatywna znajomość języka angielskiego."],
       "nice": "Doświadczenie z narzędziami BI (Tableau, Looker, Power BI). Znajomość Pythona lub R. Doświadczenie w branży e-commerce lub retail analytics.",
       "chips": ["Myślenie analityczne","Orientacja na dane","Precyzja","Inicjatywa","Komunikatywność"],
+      "chipsNegative": ["Przezroczyste ściany", "Migające światła/neony", "Odzież służbowa", "Online z włączoną kamerką", "Szkolenia wyjazdowe"],
       "benefits": [["🏋️","Karta MultiSport"],["🏥","Prywatna opieka medyczna"],["🛍️","Vouchery Allegro"],["☕","Dofinansowanie posiłków"],["🅿️","Parking"],["📚","Budżet szkoleniowy"]],
       "extra": ["Elastyczne godziny pracy (ruchomy start 7:00–10:00)","Praca hybrydowa (3 dni biuro, 2 zdalnie)","Platforma benefitów kafeteryjnych","Dofinansowanie nauki języków obcych"]
     },
@@ -888,6 +908,7 @@
       "payChips": ["Godzinne","Stała podstawa"],
       "payNote": "Rozliczanie: Godzinne, Stała podstawa",
       "matchCount": 6,
+      "mismatchCount": 2,
       "logoColor": "#1a3a2a",
       "tags": "Praktykant/Stażysta / Młodszy specjalista (Junior) • Zdalna / Hybrydowa • UoP, B2B",
       "about": "W Bloom & Root łączymy naturę z technologią. Tworzymy ekosystem cyfrowy, który pomaga ludziom i firmom rozwijać się w sposób zrównoważony. Nasze rozwiązania wspierają ekologiczne inicjatywy oraz transformację cyfrową w wielu sektorach.",
@@ -898,6 +919,7 @@
       "required": ["Ukończone lub w trakcie studiów na kierunku analiza danych lub pokrewnym.","Znajomość narzędzi analitycznych (np. Excel, SQL).","Podstawowa wiedza z zakresu statystyki i analizy danych.","Komunikatywność i umiejętność pracy w zespole.","Dobra organizacja pracy i ustalanie priorytetów.","Znajomość języka angielskiego na poziomie komunikatywnym."],
       "nice": "Znajomość języka Python lub R. Doświadczenie z narzędziami BI (Tableau, Power BI). Umiejętność tworzenia modeli predykcyjnych.",
       "chips": ["Głęboke skupienie","Metodyczność","Myślenie analityczne","Praca z dokumentacją","Precyzja"],
+      "chipsNegative": ["Przezroczyste ściany", "Migające światła/neony", "Odzież służbowa", "Online z włączoną kamerką", "Szkolenia wyjazdowe"],
       "benefits": [["🅿️","Parking"],["🏥","Prywatna opieka medyczna"],["☕","Kawa i herbata"],["🤝","Inicjatywy dobroczynne"],["📚","Dofinansowanie nauki języków"]],
       "extra": ["Służbowy telefon do użytku prywatnego","Elastyczne godziny pracy","Dofinansowanie dojazdów"]
     },
@@ -915,6 +937,7 @@
       "payChips": ["Godzinne","Stała podstawa"],
       "payNote": "Rozliczanie: Godzinne, Stała podstawa",
       "matchCount": 4,
+      "mismatchCount": 3,
       "logoColor": "#0a1e30",
       "tags": "Praktykant/Stażysta • W pełni zdalna • B2B, UoP",
       "about": "Skycash to polska aplikacja mobilna do płatności i obsługi transportu publicznego, będąca liderem fintech w sektorze mobilności. Każdego dnia pomagamy milionom użytkowników w zarządzaniu przejazdami, opłatami parkingowymi i płatnościami za usługi komunalne.",
@@ -925,6 +948,7 @@
       "required": ["Studia na kierunku informatyka, analiza danych, matematyka lub pokrewnym.","Podstawowa znajomość SQL lub gotowość do szybkiej nauki.","Umiejętność pracy z arkuszami kalkulacyjnymi.","Analityczne myślenie i dbałość o szczegóły.","Znajomość języka angielskiego (B2)."],
       "nice": "Doświadczenie z Google Analytics lub Firebase. Znajomość Pythona. Zainteresowanie branżą fintech lub mobilną.",
       "chips": ["Analityczne myślenie","Dokładność","Skrupulatność","Ciekawość","Innowacyjność"],
+      "chipsNegative": ["Przezroczyste ściany", "Migające światła/neony", "Odzież służbowa", "Online z włączoną kamerką", "Szkolenia wyjazdowe"],
       "benefits": [["💻","MacBook Pro"],["🏥","Prywatna opieka medyczna"],["🎓","Szkolenia techniczne"],["🏠","Praca zdalna"],["🚴","Dofinansowanie sportu"]],
       "extra": ["Elastyczne godziny pracy","Stock options po roku pracy","Dofinansowanie szkoleń i konferencji"]
     },
@@ -942,6 +966,7 @@
       "payChips": ["Miesięczne","Stała podstawa"],
       "payNote": "Rozliczanie: Miesięczne, Stała podstawa",
       "matchCount": 5,
+      "mismatchCount": 1,
       "logoColor": "#fff0ef",
       "tags": "Praktykant/Stażysta • Zdalna / Hybrydowa • UoP",
       "about": "Airbnb to globalna platforma noclegowa i eventowa, łącząca gości z gospodarzami w ponad 220 krajach. Warszawskie biuro jest centrum operacyjnym na rynek Europy Środkowej i Wschodniej. Wierzymy, że każdy powinien móc poczuć się jak u siebie wszędzie na świecie.",
@@ -952,6 +977,7 @@
       "required": ["Studia na kierunku ekonomia, zarządzanie, analiza danych lub pokrewnym.","Umiejętność pracy z Excelem i tworzenia raportów.","Dobra komunikacja po angielsku (B2+) – codzienna praca w tym języku.","Zainteresowanie branżą travel lub marketplace.","Analityczne podejście do rozwiązywania problemów."],
       "nice": "Doświadczenie z Tableau lub Looker. Znajomość SQL. Doświadczenie z rynkiem krótkoterminowego najmu.",
       "chips": ["Globalne myślenie","Empatia","Analityczność","Innowacyjność","Ciekawość"],
+      "chipsNegative": ["Przezroczyste ściany", "Migające światła/neony", "Odzież służbowa", "Online z włączoną kamerką", "Szkolenia wyjazdowe"],
       "benefits": [["✈️","Kredyty podróżne Airbnb"],["🏥","Ubezpieczenie zdrowotne"],["🏠","Remote-first"],["📈","Opcje na akcje"],["🧘","Wellness budget"]],
       "extra": ["15 dni pracy z dowolnego miejsca na świecie","Dofinansowanie pracy zdalnej","Miesięczne spotkania zespołu w biurze"]
     },
@@ -969,6 +995,7 @@
       "payChips": ["Miesięczne","Stała podstawa"],
       "payNote": "Rozliczanie: Miesięczne, Stała podstawa",
       "matchCount": 4,
+      "mismatchCount": 3,
       "logoColor": "#0058a3",
       "tags": "Praktykant/Stażysta • Stacjonarna / Hybrydowa • UoP",
       "about": "IKEA to szwedzka sieć sklepów meblowych i artykułów do domu, obecna w Polsce od 1990 roku. Wierzymy, że dobrze zaprojektowane meble i wyposażenie wnętrz powinny być dostępne dla każdego. Nasze zespoły analityczne pomagają nam lepiej rozumieć potrzeby klientów i optymalizować doświadczenie zakupowe.",
@@ -979,6 +1006,7 @@
       "required": ["Studia z zakresu zarządzania, ekonomii, marketingu lub pokrewnego.","Bardzo dobra znajomość Excela (tabele przestawne, formuły zaawansowane).","Umiejętność czytania i interpretacji danych sprzedażowych.","Znajomość języka angielskiego (B1+).","Dobra organizacja i terminowość."],
       "nice": "Znajomość SQL lub Power BI. Doświadczenie w handlu detalicznym. Znajomość języka szwedzkiego (miłe, ale nie wymagane).",
       "chips": ["Praktyczne myślenie","Orientacja na klienta","Porządek","Systematyczność","Dokładność"],
+      "chipsNegative": ["Przezroczyste ściany", "Migające światła/neony", "Odzież służbowa", "Online z włączoną kamerką", "Szkolenia wyjazdowe"],
       "benefits": [["🛋️","Zniżka pracownicza 15%"],["🍽️","Dofinansowanie stołówki"],["🏥","Ubezpieczenie grupowe"],["🅿️","Bezpłatny parking"],["💪","Karta sportowa"]],
       "extra": ["Elastyczne godziny pracy","Możliwość rozwoju w strukturach IKEA w Polsce i za granicą","Program mentoringowy"]
     },
@@ -996,6 +1024,7 @@
       "payChips": ["Godzinne"],
       "payNote": "Rozliczanie: Godzinne",
       "matchCount": 5,
+      "mismatchCount": 3,
       "logoColor": "#f0e8ff",
       "tags": "Praktykant/Stażysta • Zdalna / Hybrydowa • B2B, UZ",
       "about": "Mixa to butikowa agencja kreatywna specjalizująca się w digital marketingu, brandingu i strategii komunikacji. Pomagamy markom z całego świata wyróżnić się w cyfrowym świecie. Jesteśmy małym, ale zwinnym zespołem, gdzie każdy głos się liczy i każdy projekt robi różnicę.",
@@ -1006,6 +1035,7 @@
       "required": ["Studia na kierunku marketing, komunikacja, analiza danych lub pokrewnym.","Znajomość Google Analytics (Universal lub GA4).","Podstawowa znajomość platform reklamowych (Meta Ads, Google Ads).","Zdolności analityczne i myślenie oparte na danych.","Komunikatywność i umiejętność prezentacji."],
       "nice": "Znajomość Looker Studio lub Power BI. Certyfikat Google Analytics lub Meta Blueprint. Doświadczenie w branży agencyjnej.",
       "chips": ["Kreatywność","Analityczność","Estetyka","Otwartość na eksperymenty","Komunikatywność"],
+      "chipsNegative": ["Przezroczyste ściany", "Migające światła/neony", "Odzież służbowa", "Online z włączoną kamerką", "Szkolenia wyjazdowe"],
       "benefits": [["🖥️","Laptop Mac"],["🎨","Kreatywne biuro"],["☕","Kawa i snacki"],["🍺","Piwo w piątek"],["📚","Budżet szkoleniowy"]],
       "extra": ["Elastyczne godziny pracy","Praca hybrydowa lub pełne zdalne","Udział w konferencjach branżowych"]
     },
@@ -1023,6 +1053,7 @@
       "payChips": ["Miesięczne","Stała podstawa"],
       "payNote": "Rozliczanie: Miesięczne, Stała podstawa",
       "matchCount": 5,
+      "mismatchCount": 1,
       "logoColor": "#003087",
       "tags": "Młodszy specjalista (Junior) • W pełni zdalna • B2B, UoP",
       "about": "PayPal to globalny lider płatności cyfrowych, umożliwiający transakcje w ponad 200 krajach i terytoriach. Nasze centrum technologiczne w Warszawie obsługuje projekty europejskie i globalne, stanowiąc jeden z kluczowych węzłów innowacji w sieci PayPal.",
@@ -1033,6 +1064,7 @@
       "required": ["Studia na kierunku finanse, ekonomia, informatyka lub pokrewnym.","Dobra znajomość SQL.","Umiejętność pracy z dużymi zbiorami danych.","Biegła znajomość języka angielskiego – codzienna komunikacja.","Rozumienie podstawowych koncepcji finansowych i ryzyka."],
       "nice": "Znajomość Pythona lub R. Doświadczenie z Tableau lub podobnymi narzędziami BI. Wiedza z zakresu regulacji finansowych (PSD2, GDPR).",
       "chips": ["Precyzja","Analityczność","Rzetelność","Myślenie systemowe","Zorientowanie na wyniki"],
+      "chipsNegative": ["Przezroczyste ściany", "Migające światła/neony", "Odzież służbowa", "Online z włączoną kamerką", "Szkolenia wyjazdowe"],
       "benefits": [["📈","Akcje pracownicze (RSU)"],["🏥","Prywatna opieka medyczna"],["🏋️","Gym & wellness"],["🏠","Remote-first"],["🍽️","Lunch benefit"]],
       "extra": ["Globalne możliwości kariery","Program mentoringowy z seniorami","Dofinansowanie certyfikacji zawodowych"]
     },
@@ -1050,6 +1082,7 @@
       "payChips": ["Godzinne","Stała podstawa"],
       "payNote": "Rozliczanie: Godzinne, Stała podstawa",
       "matchCount": 4,
+      "mismatchCount": 2,
       "logoColor": "#00897b",
       "tags": "Praktykant/Stażysta • Zdalna / Hybrydowa • UoP, B2B",
       "about": "Znany Lekarz to największa w Polsce platforma medyczna, łącząca pacjentów ze specjalistami. Każdego miesiąca pomagamy milionom pacjentów znaleźć właściwego lekarza i umówić wizytę. Naszą misją jest demokratyzacja dostępu do opieki zdrowotnej poprzez technologię.",
@@ -1060,6 +1093,7 @@
       "required": ["Studia z zakresu analiza danych, zdrowia publicznego, marketingu lub pokrewnego.","Podstawowa znajomość SQL lub chęć nauki.","Empatia i zrozumienie potrzeb użytkownika końcowego.","Dobra organizacja i komunikatywność.","Język angielski na poziomie roboczym."],
       "nice": "Doświadczenie z Metabase lub Mixpanel. Znajomość zagadnień healthtech lub e-commerce. Doświadczenie w analizie produktowej.",
       "chips": ["Empatia","Analityczność","Rzetelność","Odpowiedzialność","Skrupulatność"],
+      "chipsNegative": ["Przezroczyste ściany", "Migające światła/neony", "Odzież służbowa", "Online z włączoną kamerką", "Szkolenia wyjazdowe"],
       "benefits": [["🏥","Prywatna opieka medyczna (premium)"],["💪","Karta MultiSport"],["🎓","Budżet szkoleniowy"],["🕐","Elastyczne godziny"],["🌿","Wellness program"]],
       "extra": ["Dostęp do platform konsultacji lekarskich","Praca zdalna lub hybrydowa","Program wellbeing i wsparcia psychologicznego"]
     },
@@ -1077,6 +1111,7 @@
       "payChips": ["Godzinne"],
       "payNote": "Rozliczanie: Godzinne",
       "matchCount": 5,
+      "mismatchCount": 3,
       "logoColor": "#f0e8ff",
       "tags": "Praktykant/Stażysta • Hybrydowa • B2B, UZ",
       "about": "Mixa to butikowa agencja kreatywna specjalizująca się w digital marketingu, brandingu i strategii komunikacji. Nasze krakowskie studio jest sercem kreatywności agencji – tu rodzą się kampanie, które wyróżniają marki na rynku.",
@@ -1087,6 +1122,7 @@
       "required": ["Studia na kierunku marketing, komunikacja lub pokrewnym.","Znajomość Google Analytics.","Podstawowa znajomość ekosystemu Meta Ads.","Zdolności analityczne i komunikatywność.","Chęć rozwijania się w branży kreatywnej."],
       "nice": "Znajomość Looker Studio. Certyfikat Google Analytics. Portfolio z projektów szkolnych lub własnych.",
       "chips": ["Kreatywność","Analityczność","Estetyka","Otwartość na eksperymenty","Komunikatywność"],
+      "chipsNegative": ["Przezroczyste ściany", "Migające światła/neony", "Odzież służbowa", "Online z włączoną kamerką", "Szkolenia wyjazdowe"],
       "benefits": [["💻","Laptop Mac"],["🎨","Kreatywne studio w Kazimierzu"],["☕","Kawa specialty"],["🍺","Piątkowe piwo"],["📚","Budżet szkoleniowy"]],
       "extra": ["Elastyczne godziny pracy","Możliwość przejścia do pełnego etatu","Udział w lokalnych eventach branżowych"]
     },
@@ -1104,6 +1140,7 @@
       "payChips": ["Miesięczne","Stała podstawa"],
       "payNote": "Rozliczanie: Miesięczne, Stała podstawa",
       "matchCount": 3,
+      "mismatchCount": 3,
       "logoColor": "#0058a3",
       "tags": "Praktykant/Stażysta • Stacjonarna / Hybrydowa • UoP",
       "about": "IKEA Kraków to jeden z największych sklepów sieci w Polsce, obsługujący klientów z całego Małopolski. Nasz team analityczny dba o to, by decyzje biznesowe opierały się na rzetelnych danych – od zarządzania asortymentem po optymalizację doświadczenia zakupowego.",
@@ -1114,6 +1151,7 @@
       "required": ["Studia na kierunku zarządzanie, ekonomia lub pokrewnym.","Dobra znajomość Excela.","Zdolności analityczne i dbałość o szczegóły.","Komunikatywność i praca zespołowa.","Znajomość języka angielskiego (B1)."],
       "nice": "Znajomość Power BI lub Tableau. Doświadczenie w retail. Znajomość języka szwedzkiego.",
       "chips": ["Praktyczne myślenie","Orientacja na klienta","Porządek","Systematyczność","Dokładność"],
+      "chipsNegative": ["Przezroczyste ściany", "Migające światła/neony", "Odzież służbowa", "Online z włączoną kamerką", "Szkolenia wyjazdowe"],
       "benefits": [["🛋️","Zniżka pracownicza 15%"],["🍽️","Dotowana stołówka IKEA"],["🏥","Ubezpieczenie grupowe"],["🅿️","Bezpłatny parking"],["💪","Karta sportowa"]],
       "extra": ["Możliwość awansu w sieci IKEA Polska","Dofinansowanie nauki języka angielskiego","Program Employee Assistance"]
     }
