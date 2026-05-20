@@ -244,8 +244,8 @@
       Dodaj do ulubionych
     </button>
   </div>
-  <div class="btn-outlined" style="display: grid">
-    <button id="match-btn" onclick="toggleMatch()" aria-expanded="false" aria-controls="match-exp">
+  <div class="action-row" style="display: grid">
+    <button class="btn-outlined" id="match-btn" onclick="toggleMatch()" aria-expanded="false" aria-controls="match-exp">
       
       <span class="match-pill-text" id="dt-match-text">
         <div style="display: inline-flex; align-items: center"><div class="cs-icon material-symbols-outlined" style="color: #28A35A;">handshake</div><div id="dt-match-text-plus"></div></div>
@@ -253,7 +253,7 @@
       </span>
       <span id="match-chevron" class="material-symbols-outlined" style="font-size: 14px; color: var(--green); transition:transform .2s">expand_more</span>
     </button>
-    <div class="match-expanded" id="match-exp">
+    <div class="match-expanded" id="match-exp" style="margin-top: -8px;">
       <br/>
       <hr>
       <br/>
