@@ -200,6 +200,7 @@ body{
 
 .pill-outlined{
     display:flex;
+    grid-auto-flow: row dense;
     flex-wrap:wrap;
     gap:8px;
     padding:13px 16px;
